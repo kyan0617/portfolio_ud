@@ -1,0 +1,45 @@
+@use "settings" as s;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap');
+
+/*----------------------
+  初期設定
+-------------------------*/
+html {
+  font-size: 10px;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  overflow-x: hidden !important;
+
+
+  @include s.mq(sm) {
+    font-size: calc(10 / 1200 * 100vw);
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 10px;
+  }
+}
+
+body {
+  max-width: 2700px;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  background-color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  font-feature-settings: "palt";
+  font-size: 1.6rem;
+  color: s.$text-color;
+  letter-spacing: 0;
+  line-height: 1.5;
+  position: relative;
+  overscroll-behavior: none;
+  margin: auto;
+  @include s.mq(md) {
+    overflow-x: hidden;
+  }
+}
+
+main {
+  min-height: 50vh;
+}
