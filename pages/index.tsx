@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Works } from '../types/works';
 import { client } from '../libs/client';
 import Top from '../components/layouts/top/topSection'
+import About from '../components/layouts/about/aboutSection'
 
 type Props = {
   works: Array<Works>;
@@ -12,6 +13,7 @@ export default function Home({ works }: Props) {
   return (
     <>
       <Top />
+      <About />
       <ul>
         {works.map((works) => (
           <li key={works.id}>
