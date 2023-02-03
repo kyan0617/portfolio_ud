@@ -32,6 +32,7 @@ body {
   color: s.$text-color;
   letter-spacing: 0;
   line-height: 1.5;
+  background-color: s.$bg-color;
   position: relative;
   overscroll-behavior: none;
   margin: auto;
@@ -42,4 +43,18 @@ body {
 
 main {
   min-height: 50vh;
+}
+
+._inner {
+  max-width: 114rem;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @include s.mq(sm) {
+    padding-inline: 3.2rem;
+  }
+  @include s.mq(md) {
+    padding-inline: 2rem;
+  }
 }

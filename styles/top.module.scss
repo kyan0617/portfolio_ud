@@ -1,0 +1,169 @@
+@use "settings" as s;
+
+.inner {
+  position: relative;
+  max-width: 148rem;
+  width: 100%;
+  margin-inline: auto;
+  padding: 7.3rem 2rem 6.4rem;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    max-width: 76.8%;
+    width: 100%;
+    height: 0.1rem;
+    background-color: s.$main-color;
+    right: 0;
+    bottom: 0;
+  }
+}
+.title {
+  margin-bottom: 3.2rem;
+}
+.large {
+  display: block;
+  font-size: 3.2rem;
+  color: s.$text-color;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  padding-bottom: 1.6rem;
+  text-transform: uppercase;
+}
+.small {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: s.$text-color;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.cardInner {
+  width: 100%;
+  background-color: #fff;
+  border: 0.1rem solid s.$main-color;
+  border-radius: 2rem;
+}
+.left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 3.2rem;
+  background-color: s.$main-color;
+  border-radius: 2rem 2rem 0 0;
+}
+.img {
+  max-width: 20rem;
+  width: 100%;
+  margin-bottom: 2.4rem;
+}
+.leftTitleText {
+  font-size: 2.4rem;
+  color: s.$accent-color;
+  letter-spacing: s.$ls;
+  text-transform: uppercase;
+}
+.right {
+  padding: 3.2rem 1.6rem;
+}
+.name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: s.$main-color;
+  padding-bottom: 0.8rem;
+}
+.nameEnglish {
+  display: block;
+  font-size: 1.2rem;
+  color: s.$text-color;
+  letter-spacing: s.$ls;
+  padding-bottom: 1.6rem;
+}
+.rightTitle {
+  font-size: 1.4rem;
+  letter-spacing: s.$ls;
+  background-color: s.$accent-color;
+  color: #fff;
+  margin-bottom: 2.4rem;
+  padding: 1rem 1.4rem;
+}
+.rightText {
+  font-size: 1.4rem;
+  color: s.$text-color;
+  line-height: 1.8;
+}
+
+@include s.mq(sm) {
+  .inner {
+    padding: 6rem 4.8rem 12rem;
+  }
+  .title {
+    margin-bottom: 5.4rem;
+  }
+  .large {
+    font-size: 6.4rem;
+    padding-bottom: 3.8rem;
+  }
+  .small {
+    font-size: 4rem;
+  }
+  .card {
+    padding-left: 2.4rem;
+  }
+  .cardInner {
+    display: flex;
+    max-width: 95.3rem;
+    width: 100%;
+  }
+  .left {
+    max-width: 37rem;
+    width: 100%;
+    padding: 0 4.4rem;
+    border-radius: 2rem 0 0 2rem;
+  }
+  .img {
+    max-width: 100%;
+    margin-bottom: 3.3rem;
+  }
+  .leftTitleText {
+    font-size: 3.8rem;
+  }
+  .right {
+    padding: 4rem 3.2rem;
+  }
+  .name {
+    font-size: 3.6rem;
+  }
+  .nameEnglish {
+    font-size: 1.4rem;
+  }
+  .rightTitle {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    padding: 0.8rem 1.4rem;
+  }
+}
+
+@include s.mq(md) {
+  .inner {
+    padding: 6rem 4.8rem 14rem;
+
+    &::after {
+      max-width: calc(100% - 8rem);
+      left: 4rem;
+      right: 4rem;
+    }
+  }
+  .right {
+    padding: 8rem 6.4rem;
+  }
+}
+
+@include s.mq(lg) {
+  .inner {
+    padding: 6rem 4.8rem 19.7rem;
+  }
+}
