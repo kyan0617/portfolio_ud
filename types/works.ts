@@ -6,6 +6,14 @@ export type Works = {
   revisedAt: string;
   title: string;
   body: string;
+  worksDetails: {
+    range: string;
+    img: {
+      url: string,
+      height: number;
+      width: number;
+    }
+  }
   eye_catch: {
     url: string;
     height: number;
