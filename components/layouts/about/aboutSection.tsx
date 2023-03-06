@@ -7,7 +7,7 @@ export default function Top() {
       <section className={styles.container}>
         <div className={styles.inner}>
           <div className={styles.img}>
-            <Image src='/about_img.jpg' layout='responsive' objectFit='contain' alt='logo' width={640} height={436} />
+            <Image src='/aboutImg.jpg' layout='responsive' objectFit='contain' alt='logo' width={640} height={436} />
           </div>
           <div className={styles.main}>
             <div className={styles.title}>
