@@ -59,12 +59,46 @@
   }
 }
 .workTitle {
+  display: inline-block;
+  position: relative;
   font-size: 1.4rem;
   color: s.$text-color;
-  padding-left: 1.2rem;
+  padding: 0 0 0.4rem 1.2rem;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% - 1.2rem);
+    height: 0.2rem;
+    right: 0;
+    bottom: 0;
+    left: 1.2rem;
+    background-color: s.$main-color;
+    transform: scale(0, 1);
+    transform-origin: right top;
+    transition: transform 0.3s ease;
+  }
+
+  @include s.mq(sm) {
+    font-size: 1.5rem;
+  }
 
   @include s.mq(md) {
     font-size: 1.6rem;
+  }
+}
+
+// hover effect
+@include s.hover {
+  .item:hover .workTitle {
+    color: s.$main-color;
+
+    &::after {
+      transform-origin:left top;
+      transform:scale(1, 1);
+    }
   }
 }
 
