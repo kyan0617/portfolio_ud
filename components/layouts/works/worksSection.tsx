@@ -30,6 +30,7 @@ export default function WorksSection(props: Props) {
                 rewind: true,
                 perMove: 1,
                 perPage: 3,
+                gap: '2.4rem',
                 breakpoints: {
                   540: {
                     perMove: 1,

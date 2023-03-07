@@ -4,7 +4,10 @@
   padding: 0 1rem 15.2rem;
 
   @include s.mq(sm) {
-    padding: 19.4rem 3.2rem 15.2rem;
+    padding: 14rem 2rem;
+  }
+  @include s.mq(md) {
+    padding-block: 19.4rem 15.2rem;
   }
 }
 .title {
@@ -13,7 +16,6 @@
   
   @include s.mq(md) {
     margin-bottom: 3.2rem;
-    padding-inline: 0;
   }
 }
 .titleText {
@@ -23,6 +25,10 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   
+  @include s.mq(sm) {
+    font-size: 4.6rem;
+  }
+
   @include s.mq(md) {
     font-size: 6rem;
     font-weight: 400;
@@ -33,7 +39,7 @@
   width: 100%;
   
   @include s.mq(md) {
-    max-width: 40rem;
+    max-width: 44.8rem;
   }
 }
 .link {
@@ -43,11 +49,23 @@
 .img {
   width: 100%;
   margin-bottom: 0.8rem;
+
+  .splide__spinner {
+    display: none;
+  }
+
+  @include s.mq(md) {
+    margin-bottom: 1.2rem;
+  }
 }
 .workTitle {
   font-size: 1.4rem;
   color: s.$text-color;
   padding-left: 1.2rem;
+
+  @include s.mq(md) {
+    font-size: 1.6rem;
+  }
 }
 
 // splide styles
@@ -84,10 +102,22 @@
         transform: rotate(180deg);
       }
     }
-  }
-}
-.img {
-  .splide__spinner {
-    display: none;
+
+    @include s.mq(sm) {
+      width: 5rem;
+      bottom: -7.4rem;
+    }
+
+    @include s.mq(md) {
+      width: 6rem;
+      bottom: -8rem;
+
+      &:first-of-type {
+        left: 4.8rem;
+      }
+      &:last-of-type {
+        right: 4.8rem;
+      }
+    }
   }
 }
