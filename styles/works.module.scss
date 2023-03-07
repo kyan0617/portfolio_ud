@@ -1,7 +1,60 @@
 @use "settings" as s;
 
-.inner {
-  padding-bottom: 15.2rem;
+.wrapper {
+  padding: 0 1rem 15.2rem;
+
+  @include s.mq(sm) {
+    padding: 19.4rem 3.2rem 15.2rem;
+  }
+}
+.title {
+  margin-bottom: 2.4rem;
+  padding-inline: 1.2rem;
+  
+  @include s.mq(md) {
+    margin-bottom: 3.2rem;
+    padding-inline: 0;
+  }
+}
+.titleText {
+  font-size: 3.2rem;
+  color: s.$text-color;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  
+  @include s.mq(md) {
+    font-size: 6rem;
+    font-weight: 400;
+  }
+}
+.item {
+  max-width: 70%;
+  width: 100%;
+  
+  @include s.mq(md) {
+    max-width: 40rem;
+  }
+}
+.link {
+  display: block;
+  width: 100%;
+}
+.img {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+.workTitle {
+  font-size: 1.4rem;
+  color: s.$text-color;
+  padding-left: 1.2rem;
+}
+
+// splide styles
+ .inner {
+  .splide__track {
+    overflow: visible;
+  }
 
   button {
     width: 4rem;
@@ -18,6 +71,9 @@
       background-repeat: no-repeat;
       background-size: contain;
     }
+    &:focus-visible {
+      outline: 0;
+    }
 
     svg {
       display: none;
@@ -30,29 +86,8 @@
     }
   }
 }
-.title {
-  font-size: 3.2rem;
-  color: s.$text-color;
-  font-weight: 700;
-  margin-bottom: 2.4rem;
-  text-transform: uppercase;
-  padding-inline: 2rem;
-}
-.item {
-  max-width: 26rem;
-  width: 100%;
-  padding-inline: 1.2rem;
-}
-.link {
-  display: block;
-  width: 100%;
-}
 .img {
-  width: 100%;
-  margin-bottom: 0.8rem;
-}
-.workTitle {
-  font-size: 1.4rem;
-  color: s.$text-color;
-  padding-left: 1.2rem;
+  .splide__spinner {
+    display: none;
+  }
 }
