@@ -14,7 +14,7 @@ export default function Top() {
             <div className={styles.cardInner}>
               <div className={styles.left}>
                 <div className={styles.img}>
-                  <Image src='/logo.svg' layout='responsive' objectFit='contain' alt='logo' width={283} height={127} />
+                  <Image src='/src/img/logo.svg' layout='responsive' objectFit='contain' alt='logo' width={283} height={127} />
                 </div>
                 <div className={styles.leftTitle}>
                   <span className={styles.leftTitleText}>portfolio</span>

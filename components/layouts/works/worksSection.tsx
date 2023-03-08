@@ -13,7 +13,7 @@ type Props = {
 export default function WorksSection(props: Props) {
   return (
     <>
-      <section className="container">
+      <section className="section">
         <div className={styles.wrapper}>
           <div className={`${styles["inner"]} _inner`}>
             <div className={styles.title}>

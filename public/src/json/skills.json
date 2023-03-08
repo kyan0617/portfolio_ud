@@ -1,0 +1,47 @@
+[
+  {
+    "image": "",
+    "title": "Shopify構築(Liquid)",
+    "text": "Liquidを使用したショップカスタマイズが可能です。初期構築〜セクションカスタマイズまで対応しております。構築面の運用につきましてもお気軽にご相談くださいませ。"
+  },
+  {
+    "image": "",
+    "title": "WordPress",
+    "text": "Liquidを使用したショップカスタマイズが可能です。<br />初期構築〜セクションカスタマイズまで対応しております。<br />構築面の運用につきましてもお気軽にご相談くださいませ。"
+  },
+  {
+    "image": "",
+    "title": "HTML・CSS",
+    "text": "レスポンシブに対応したサイト制作をしています。CSSはSCSSを使用し、FLOCSSもしくはBEM記法でコーディングいたします。"
+  },
+  {
+    "image": "",
+    "title": "JavaScript(TypeScript)",
+    "text": "ハンバーガーメニューやアニメーションなどWebサイトに動きをつけます。このサイトはTypeScriptを使用して制作いたしました。"
+  },
+  {
+    "image": "",
+    "title": "JavaScript(TypeScript)",
+    "text": "ハンバーガーメニューやアニメーションなどWebサイトに動きをつけます。このサイトはTypeScriptを使用して制作いたしました。"
+  },
+  {
+    "image": "",
+    "title": "microCMS",
+    "text": "microCMSを使った、オリジナルのサイトを制作いたします。このサイトもmicroCMSを使用しております。"
+  },
+  {
+    "image": "",
+    "title": "GitHub",
+    "text": "チーム開発では、GitHubを使用しています。その自主制作でもGitHubでバージョン管理を行なっております。"
+  },
+  {
+    "image": "",
+    "title": "React(Next.js)",
+    "text": "こちらのサイトはNext.jsを使用しております。まだまだ未熟ではありますが、これからも学習を進めていきます。"
+  },
+  {
+    "image": "",
+    "title": "Vercel",
+    "text": "こちらのサイトはVercelを使用してデプロイしています。"
+  }
+]
