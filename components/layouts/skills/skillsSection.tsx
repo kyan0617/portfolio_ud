@@ -1,6 +1,8 @@
-import styles from '../../../styles/works.module.scss';
-import Image from 'next/legacy/image';
+import styles from '../../../styles/skills.module.scss';
 import skillsData from '../../../public/src/json/skills.json';
+import SkillCards from './skillCards';
+
+
 
 export default function skillsSection() {
   return (
@@ -11,13 +13,14 @@ export default function skillsSection() {
             <div className={styles.title}>
               <h2 className={styles.titleText}>skills</h2>
             </div>
-            <ul className={styles.cardList}>
-              <li className={styles.card}>
-                <div className={styles.cardImage}>
-                  <img src="" alt="" />
-                </div>
-              </li>
-            </ul>
+            {skillsData.map((skill) => (
+              <SkillCards
+                key={skill.title}
+                title={skill.title}
+                text={skill.text}
+                image={skill.image}
+              />
+            ))}
           </div>
         </div>
       </section>

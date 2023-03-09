@@ -5,6 +5,7 @@ import { client } from '../libs/client';
 import TopSection from '../components/layouts/top/topSection'
 import AboutSection from '../components/layouts/about/aboutSection'
 import WorksSection from '../components/layouts/works/worksSection'
+import SkillsSection from '../components/layouts/skills/skillsSection'
 
 type Props = {
   works: Array<Works>;
@@ -15,7 +16,8 @@ export default function Home({ works }: Props) {
     <>
       <TopSection />
       <AboutSection />
-      <WorksSection works={ works }/>
+      <WorksSection works={ works } />
+      <SkillsSection />
     </>
   )
 }

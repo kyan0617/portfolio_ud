@@ -1,46 +1,81 @@
 [
   {
-    "image": "",
+    "image": {
+      "src": "/src/img/shopify_logo.png",
+      "alt": "Shopify",
+      "width": 400,
+      "height": 240
+    },
     "title": "Shopify構築(Liquid)",
     "text": "Liquidを使用したショップカスタマイズが可能です。初期構築〜セクションカスタマイズまで対応しております。構築面の運用につきましてもお気軽にご相談くださいませ。"
   },
   {
-    "image": "",
+    "image": {
+      "src": "/src/img/wordpress_logo.png",
+      "alt": "WordPress",
+      "width": 400,
+      "height": 240
+    },
     "title": "WordPress",
     "text": "Liquidを使用したショップカスタマイズが可能です。<br />初期構築〜セクションカスタマイズまで対応しております。<br />構築面の運用につきましてもお気軽にご相談くださいませ。"
   },
   {
-    "image": "",
+    "image": {
+      "src": "/src/img/html_css_logo.png",
+      "alt": "HTML CSS",
+      "width": 400,
+      "height": 240
+    },
     "title": "HTML・CSS",
     "text": "レスポンシブに対応したサイト制作をしています。CSSはSCSSを使用し、FLOCSSもしくはBEM記法でコーディングいたします。"
   },
   {
-    "image": "",
+    "image": {
+      "src": "/src/img/js_ts_logo.png",
+      "alt": "JavaScript TypeScript",
+      "width": 400,
+      "height": 240
+    },
     "title": "JavaScript(TypeScript)",
     "text": "ハンバーガーメニューやアニメーションなどWebサイトに動きをつけます。このサイトはTypeScriptを使用して制作いたしました。"
   },
   {
-    "image": "",
-    "title": "JavaScript(TypeScript)",
-    "text": "ハンバーガーメニューやアニメーションなどWebサイトに動きをつけます。このサイトはTypeScriptを使用して制作いたしました。"
-  },
-  {
-    "image": "",
+    "image": {
+      "src": "/src/img/microcms_logo.png",
+      "alt": "microCMS",
+      "width": 400,
+      "height": 240
+    },
     "title": "microCMS",
     "text": "microCMSを使った、オリジナルのサイトを制作いたします。このサイトもmicroCMSを使用しております。"
   },
   {
-    "image": "",
+    "image": {
+      "src": "/src/img/github_logo.png",
+      "alt": "GitHub",
+      "width": 400,
+      "height": 240
+    },
     "title": "GitHub",
     "text": "チーム開発では、GitHubを使用しています。その自主制作でもGitHubでバージョン管理を行なっております。"
   },
   {
-    "image": "",
+    "image": {
+      "src": "/src/img/react_logo.png",
+      "alt": "React",
+      "width": 400,
+      "height": 240
+    },
     "title": "React(Next.js)",
     "text": "こちらのサイトはNext.jsを使用しております。まだまだ未熟ではありますが、これからも学習を進めていきます。"
   },
   {
-    "image": "",
+    "image": {
+      "src": "/src/img/vercel_logo.png",
+      "alt": "Vercel",
+      "width": 400,
+      "height": 240
+    },
     "title": "Vercel",
     "text": "こちらのサイトはVercelを使用してデプロイしています。"
   }
