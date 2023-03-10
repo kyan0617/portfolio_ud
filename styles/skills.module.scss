@@ -1,0 +1,24 @@
+@use "settings" as s;
+
+.wrapper {
+  padding: 0 2rem 8rem;
+}
+.title {
+  margin-bottom: 2.4rem;
+}
+.titleText {
+  font-size: 3.2rem;
+  color: s.$text-color;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  
+  @include s.mq(sm) {
+    font-size: 4.6rem;
+  }
+
+  @include s.mq(md) {
+    font-size: 6rem;
+    font-weight: 400;
+  }
+}

@@ -24,7 +24,7 @@ export default function skillsCards({ title, text, image }: Props) {
             width={image.width}
             height={image.height}
             layout="responsive"
-            objectFit="cover"
+            objectFit="contain"
           />
         </div>
         <div className={styles.content}>
