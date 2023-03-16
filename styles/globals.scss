@@ -36,9 +36,6 @@ body {
   position: relative;
   overscroll-behavior: none;
   margin: auto;
-  @include s.mq(md) {
-    overflow-x: hidden;
-  }
 }
 
 main {

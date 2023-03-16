@@ -1,6 +1,7 @@
 import styles from '../../../styles/skills.module.scss';
 import skillsData from '../../../public/src/json/skills.json';
 import SkillCards from './skillCards';
+import SkillsList from './skillsList';
 
 
 
@@ -13,12 +14,11 @@ export default function skillsSection() {
             <div className={styles.title}>
               <h2 className={styles.titleText}>skills</h2>
             </div>
+            <SkillCards skills={skillsData} />
             {skillsData.map((skill) => (
-              <SkillCards
+              <SkillsList
                 key={skill.title}
                 title={skill.title}
-                text={skill.text}
-                image={skill.image}
               />
             ))}
           </div>
