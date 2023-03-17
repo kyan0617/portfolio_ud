@@ -4,6 +4,10 @@
   position: relative;
   max-width: 32rem;
   width: 100%;
+
+  @include s.mq(sm) {
+    max-width: 40rem;
+  }
 }
 .card {
   position: absolute;
@@ -26,6 +30,10 @@
 }
 .content {
   padding: 4.2rem 1.6rem 3.2rem;
+
+  @include s.mq(sm) {
+    padding: 3.2rem;
+  }
 }
 .title {
   font-size: 1.8rem;
@@ -33,6 +41,11 @@
   color: s.$text-color;
   letter-spacing: 0.12em;
   margin-bottom: 1.6rem;
+
+  @include s.mq(sm) {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
 }
 .text {
   font-size: 1.6rem;

@@ -14,13 +14,10 @@ export default function skillsSection() {
             <div className={styles.title}>
               <h2 className={styles.titleText}>skills</h2>
             </div>
-            <SkillCards skills={skillsData} />
-            {skillsData.map((skill) => (
-              <SkillsList
-                key={skill.title}
-                title={skill.title}
-              />
-            ))}
+            <div className={styles.content}>
+              <SkillCards skills={skillsData} />
+              <SkillsList skills={skillsData} />
+            </div>
           </div>
         </div>
       </section>

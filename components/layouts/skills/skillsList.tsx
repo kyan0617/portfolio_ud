@@ -1,16 +1,22 @@
 import styles from '../../../styles/skillsList.module.scss';
 import skillsData from '../../../public/src/json/skills.json';
 
-type Props = {
+type Skill = {
   title: string;
 };
 
-export default function skillsList({ title }: Props) {
+type Props = {
+  skills: Skill[];
+};
+
+export default function skillsList({ skills }: Props) {
   return (
     <ul className={styles.list}>
-      <li className={styles.item} key={title}>
-        {title}
-      </li>
+      {skills.map((skill) => (
+        <li className={styles.item} key={skill.title}>
+          {skill.title}
+        </li>
+      ))}
     </ul>
   )
 }
