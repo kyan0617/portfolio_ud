@@ -1,6 +1,5 @@
 import styles from '../../../styles/skillCards.module.scss';
 import Image from 'next/legacy/image';
-import skillsData from '../../../public/src/json/skills.json';
 import { useEffect, useRef } from 'react';
 
 type Skill = {
@@ -16,9 +15,10 @@ type Skill = {
 
 type Props = {
   skills: Skill[];
+  activeSkillKey: string;
 };
 
-export default function skillsCards({ skills }: Props) {
+export default function SkillsCards({ skills, activeSkillKey }: Props) {
   const ulRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function skillsCards({ skills }: Props) {
       }
 
       for (let i = 0; i < liList.length; i++) {
-        liList[i].style.height = `${maxHeight}px`;
+        (liList[i] as HTMLLIElement).style.height = `${maxHeight}px`;
       }
     }
   }, [skills]);
@@ -44,8 +44,8 @@ export default function skillsCards({ skills }: Props) {
 
   return (
     <ul className={styles.cardList}>
-      {skills.map((skill) => (
-        <li className={styles.card} key={skill.title}>
+      {skills.map((skill, index) => (
+        <li className={`${styles.card} ${activeSkillKey === index.toString() ? styles.isActive : ''} ${activeSkillKey === (index - 1).toString() ? styles.isActivePrev : ''}`} key={skill.title}>
           
           <div className={styles.cardImage}>
             <Image
