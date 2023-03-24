@@ -1,7 +1,7 @@
 [
   {
     "image": {
-      "src": "/src/img/shopify_logo.png",
+      "src": "/src/img/shopify_logo.webp",
       "alt": "Shopify",
       "width": 400,
       "height": 240
@@ -11,7 +11,7 @@
   },
   {
     "image": {
-      "src": "/src/img/wordpress_logo.png",
+      "src": "/src/img/wordpress_logo.webp",
       "alt": "WordPress",
       "width": 400,
       "height": 240
@@ -21,7 +21,7 @@
   },
   {
     "image": {
-      "src": "/src/img/html_css_logo.png",
+      "src": "/src/img/html_css_logo.webp",
       "alt": "HTML CSS",
       "width": 400,
       "height": 240
@@ -31,7 +31,7 @@
   },
   {
     "image": {
-      "src": "/src/img/js_ts_logo.png",
+      "src": "/src/img/js_ts_logo.webp",
       "alt": "JavaScript TypeScript",
       "width": 400,
       "height": 240
@@ -41,7 +41,7 @@
   },
   {
     "image": {
-      "src": "/src/img/microcms_logo.png",
+      "src": "/src/img/microcms_logo.webp",
       "alt": "microCMS",
       "width": 400,
       "height": 240
@@ -51,7 +51,7 @@
   },
   {
     "image": {
-      "src": "/src/img/github_logo.png",
+      "src": "/src/img/github_logo.webp",
       "alt": "GitHub",
       "width": 400,
       "height": 240
@@ -61,7 +61,7 @@
   },
   {
     "image": {
-      "src": "/src/img/react_logo.png",
+      "src": "/src/img/react_logo.webp",
       "alt": "React",
       "width": 400,
       "height": 240
@@ -71,7 +71,7 @@
   },
   {
     "image": {
-      "src": "/src/img/vercel_logo.png",
+      "src": "/src/img/vercel_logo.webp",
       "alt": "Vercel",
       "width": 400,
       "height": 240

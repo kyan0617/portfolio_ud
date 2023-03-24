@@ -26,7 +26,7 @@ export default function WorksSection(props: Props) {
                 pagination: false,
                 type: 'loop',
                 lazyLoad: 'nearby',
-                preloadPages: 2,
+                preloadPages: 3,
                 rewind: true,
                 perMove: 1,
                 perPage: 3,

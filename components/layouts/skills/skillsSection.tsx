@@ -9,7 +9,6 @@ export default function SkillsSection() {
   const [activeSkillKey, setActiveSkillKey] = useState<string>('0');
 
   const handleSkillItemClick = (skillKey: string) => {
-    console.log(`Skill ${skillKey} was clicked!`);
     setActiveSkillKey(skillKey);
   }
 

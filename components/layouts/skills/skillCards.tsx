@@ -45,7 +45,7 @@ export default function SkillsCards({ skills, activeSkillKey }: Props) {
   return (
     <ul className={styles.cardList}>
       {skills.map((skill, index) => (
-        <li className={`${styles.card} ${activeSkillKey === index.toString() ? styles.isActive : ''} ${activeSkillKey === (index - 1).toString() ? styles.isActivePrev : ''}`} key={skill.title}>
+        <li className={`${styles.card} ${activeSkillKey === index.toString() ? styles.isActive : ''} ${activeSkillKey === (index + 1).toString() ? styles.isActivePrev : ''}`} key={ index }>
           
           <div className={styles.cardImage}>
             <Image
@@ -55,6 +55,7 @@ export default function SkillsCards({ skills, activeSkillKey }: Props) {
               height={skill.image.height}
               layout="responsive"
               objectFit="contain"
+              priority
             />
           </div>
           <div className={styles.content}>

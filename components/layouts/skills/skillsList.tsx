@@ -1,5 +1,4 @@
 import styles from '../../../styles/skillsList.module.scss';
-import skillsData from '../../../public/src/json/skills.json';
 
 type Skill = {
   title: string;
