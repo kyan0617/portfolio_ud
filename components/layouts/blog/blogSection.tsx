@@ -11,7 +11,7 @@ export default function BlogSection(props: Props) {
     <>
       <section className={styles.section}>
         <div className={styles.wrapper}>
-          <div className={`${styles["inner"]} _inner`}>
+          <div className={`${styles.inner} _inner`}>
             <div className={styles.heading}>
               <span className={styles.headingText}>blog</span>
             </div>
