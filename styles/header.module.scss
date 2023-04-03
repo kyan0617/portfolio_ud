@@ -1,0 +1,25 @@
+@use "settings" as s;
+
+.container {
+  background-color: s.$main-color;
+}
+.inner {
+  padding: 1.2rem 2rem;
+
+  @include s.mq(sm) {
+    padding: 1.6rem 2rem;
+  }
+}
+.logo {
+  max-width: 10rem;
+  width: 100%;
+  margin-inline: auto;
+
+  @include s.mq(sm) {
+    max-width: 12rem;
+  }
+}
+.link {
+  display: block;
+  width: 100%;
+}

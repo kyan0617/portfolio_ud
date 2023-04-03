@@ -8,6 +8,8 @@ export type Works = {
   body: string;
   worksDetails: {
     range: string;
+    url: string;
+    tool: string;
     img: {
       url: string,
       height: number;

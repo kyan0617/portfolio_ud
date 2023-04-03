@@ -1,7 +1,10 @@
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import { client } from '../../libs/client';
 import type { Works } from '../../types/works';
-
+import HeaderSection from '../../components/layouts/header/headerSection'
+import WorkDetails from '../../components/layouts/works/workDetails'
+import ContactSection from '../../components/layouts/contact/contactSection'
+import FooterSection from '../../components/layouts/footer/footerSection'
 
 type Props = {
   works: Works;
@@ -9,15 +12,12 @@ type Props = {
 
 export default function WorksId({ works }: Props) {
   return (
-    <main>
-      <h1>{works.title}</h1>
-      <p>{works.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${works.body}`,
-        }}
-      />
-    </main>
+    <>
+      <HeaderSection />
+      <WorkDetails  works={works}/>
+      <ContactSection />
+      <FooterSection />
+    </>
   )
 }
 

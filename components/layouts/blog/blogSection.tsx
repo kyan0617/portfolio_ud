@@ -21,6 +21,9 @@ export default function BlogSection(props: Props) {
               </div>
               <BlogList blog={ props.blog }/>
             </div>
+            <div className={styles.button}>
+              <a href="https://next-blog.site/" className={styles.link}>記事一覧を見る</a>
+            </div>
           </div>
         </div>
       </section>

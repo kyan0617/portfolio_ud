@@ -9,6 +9,8 @@ import AboutSection from '../components/layouts/about/aboutSection'
 import WorksSection from '../components/layouts/works/worksSection'
 import SkillsSection from '../components/layouts/skills/skillsSection'
 import BlogSection from '../components/layouts/blog/blogSection'
+import ContactSection from '../components/layouts/contact/contactSection'
+import FooterSection from '../components/layouts/footer/footerSection'
 
 type Props = {
   works: Array<Works>;
@@ -23,6 +25,8 @@ export default function Home({ works, blog }: Props) {
       <WorksSection works={ works } />
       <SkillsSection />
       <BlogSection  blog={ blog } />
+      <ContactSection />
+      <FooterSection />
     </>
   )
 }
