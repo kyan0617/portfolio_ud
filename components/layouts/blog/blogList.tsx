@@ -15,7 +15,7 @@ export default function BlogList(props: Props) {
     <ul className={styles.list}>
     {latestBlog.map((article, index) => (
         <li className={`${index === 0 ? styles.firstItem : styles.item}`} key={article.title}>
-          <a href="" className={styles.link}>
+          <a href={`https://next-blog.site/media/${article.id}`} className={styles.link} target="_blank" rel="noopener noreferrer">
             <div className={styles.img}>
               <Image
                 src={article.thumbnail.url}
