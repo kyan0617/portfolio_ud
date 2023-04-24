@@ -1,5 +1,115 @@
 @use "settings" as s;
 
+.inner {
+  padding: 4rem 2rem;
+
+  @include s.mq(sm) {
+    padding: 8rem 3.2rem;
+  }
+}
+.heading {
+  font-size: 2rem;
+  color: s.$accent-color;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+
+  @include s.mq(sm) {
+    font-size: 2.4rem;
+    margin-bottom: 3.2rem;
+  }
+  @include s.mq(md) {
+    font-size: 2.8rem;
+  }
+}
+.img {
+  width: 100%;
+  margin-bottom: 4rem;
+
+  @include s.mq(sm) {
+    margin-bottom: 6rem;
+  }
+  @include s.mq(md) {
+    margin-bottom: 7.2rem;
+  }
+}
+.details {
+ margin-bottom: 6rem;
+
+ @include s.mq(sm) {
+  margin-bottom: 8rem;
+ }
+}
+.unit:not(:last-of-type) {
+  margin-bottom: 3.2rem;
+
+  @include s.mq(md) {
+    margin-bottom: 4.8rem;
+  }
+}
 .title {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: s.$main-color;
+  border-bottom: 0.1rem solid s.$main-color;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+
+  @include s.mq(sm) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  @include s.mq(md) {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+}
+.text {
+  font-size: 1.4rem;
+
+  @include s.mq(md) {
+    font-size: 1.6rem;
+  }
+}
+.button {
+  max-width: 20rem;
+  width: 100%;
+  margin-inline: auto;
+
+  @include s.mq(md) {
+    max-width: 24rem;
+  }
+}
+.link {
+  display: block;
+  position: relative;
+  font-size: 1.8rem;
+  border: 0.1rem solid #423F3C;
+  padding: 2rem 1.6rem;
+  transition: letter-spacing 0.3s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 6rem;
+    height: 0.1rem;
+    top: 50%;
+    right: -12%;
+    transform: translateY(-50%);
+    background-color: #423F3C;
+    transition: right 0.3s ease;
+  }
+
+  @include s.hover {
+    &:hover {
+      letter-spacing: 0.05em;
+
+      &::after {
+        right: -15%;
+      }
+    }  
+  }
+  @include s.mq(md) {
+    font-size: 2.4rem;
+  }
 }

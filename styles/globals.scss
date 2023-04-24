@@ -12,10 +12,14 @@ html {
 
 
   @include s.mq(sm) {
-    font-size: calc(10 / 1200 * 100vw);
+    font-size: calc(10 / 767 * 100vw);
   }
 
-  @media screen and (min-width: 1200px) {
+  @include s.mq(md) {
+    font-size: calc(10 / 1100 * 100vw);
+  }
+
+  @media screen and (min-width: 1100px) {
     font-size: 10px;
   }
 }

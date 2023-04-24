@@ -21,7 +21,7 @@ export default function WorkDetails({ works }: Props) {
               width={works.worksDetails.img.width}
               height={works.worksDetails.img.height}
               layout="responsive"
-              objectFit="cover"
+              objectFit="contain"
               data-splide-lazy={works.worksDetails.img.url}
               priority={true}
             />
@@ -45,14 +45,14 @@ export default function WorkDetails({ works }: Props) {
                 </p>
               </div>
             )}
-            {works.worksDetails.url && (
-              <div className={styles.button}>
-                <a href={works.worksDetails.url} className={styles.link} target='_blank' rel="noreferrer">
-                  Go To Site
-                </a>
-              </div>
-            )}
           </div>
+          {works.worksDetails.url && (
+            <div className={styles.button}>
+              <a href={works.worksDetails.url} className={styles.link} target='_blank' rel="noreferrer">
+                Go To Site
+              </a>
+            </div>
+          )}
         </div>
       </section>
     </>

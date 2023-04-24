@@ -41,7 +41,7 @@ export default function BlogList(props: Props) {
         </li>
       ))}
       <li className={styles.viewAll}>
-        <a href="https://next-blog.site/" className={styles.viewAllLink}>記事一覧を見る</a>
+        <a href="https://next-blog.site/" className={styles.viewAllLink} target="_blank" rel="noopener noreferrer">記事一覧を見る</a>
       </li>
     </ul>
   )

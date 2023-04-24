@@ -203,7 +203,10 @@
     grid-column: 2 / 3;
     justify-self: end;
     align-self: center;
-    padding-right: 0;
+    padding-right: 1.6rem;
+  }
+  @include s.mq(md) {
+    margin-right: 0;
   }
 }
 .viewAllLink {
