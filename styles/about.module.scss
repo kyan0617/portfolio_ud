@@ -10,9 +10,12 @@
   max-width: 95%;
   width: 100%;
   margin-left: auto;
-  border-radius: 2rem 0 0 2rem;
   overflow: hidden;
   margin-bottom: 9.3rem;
+  
+  img {
+    border-radius: 2rem 0 0 2rem;
+  }
 }
 .main {
   padding-inline: 2rem;
@@ -43,7 +46,7 @@
 .text {
   font-size: 1.6rem;
   color: s.$text-color;
-  line-height: 2;
+  line-height: 2.5;
 }
 
 @include s.mq(sm) {
@@ -70,7 +73,7 @@
     width: 100%;
   }
   .main {
-    padding-inline: 2.6rem;
+    padding-inline: 0 2.6rem;
   }
   .title {
     width: 100%;
@@ -79,10 +82,24 @@
   }
   .titleText {
     font-size: 11.11vw;
-    top: -12rem;
+    top: -7rem;
   }
   .name {
-    font-size: 6rem;
+    font-size: 4rem;
+  }
+}
+@include s.mq(md) {
+  .main {
+    padding-inline: 2.6rem;
+  }
+  .img {
+    margin-left: 0;
+  }
+  .titleText {
+    top: -11rem;
+  }
+  .name {
+    font-size: 5.6rem;
   }
 }
 

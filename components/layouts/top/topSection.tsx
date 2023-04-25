@@ -26,12 +26,13 @@ export default function Top() {
                 <p className={styles.rightTitle}>WEB Coder</p>
                 <div className={styles.rightContent}>
                   <p className={styles.rightText}>
-                    ご覧いただきありがとうございます。<br />
+                    ご覧いただきありがとうございます！<br />
                     愛知県名古屋市を拠点にフリーランスで活動している西田遥香と申します。<br />
-                    Shopify構築をメインに、WEB制作のお仕事をしております。<br />
-                    前職では、ECサイトの立ち上げから運営までを経験いたしました。<br />
                     <br />
-                    丁寧かつ円滑なコミュニケーションを取り、しっかりとご希望に沿ったものを提供できるよう心を込めてお仕事いたします。
+                    Liquidを使用したShopify構築やWordPressのオリジナルテーマ制作などをメインにWEBコーダーのお仕事をしております。<br />
+                    <br />
+                    最近では、Next.jsなどのフレームワークにも興味を持ち、学習を進めているところです。<br />
+                    <br />
                   </p>
                 </div>
               </div>

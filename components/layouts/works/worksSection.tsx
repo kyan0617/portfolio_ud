@@ -16,8 +16,21 @@ export default function WorksSection(props: Props) {
       <section className="section">
         <div className={styles.wrapper}>
           <div className={`${styles["inner"]} _inner`}>
-            <div className={styles.title}>
-              <h2 className={styles.titleText}>works</h2>
+            <div className={styles.top}>
+              <h2 className={styles.title}>works</h2>
+              <div className={styles.right}>
+                <Link href='/works' className={styles.moreLink}>
+                  <p className={styles.moreLinkText}>view all</p>
+                  <div className={styles.button}>
+                    <span className={styles.buttonImage}>
+                      <Image src='/src/img/arrow_black.svg' layout='responsive' objectFit='contain' alt='arrow' width={16} height={14} />
+                    </span>
+                    <span className={styles.buttonImageHover}>
+                      <Image src='/src/img/arrow_white.svg' layout='responsive' objectFit='contain' alt='arrow' width={16} height={14} />
+                    </span>
+                  </div>
+                </Link>
+              </div>
             </div>
             <Splide
               area-label="Works"

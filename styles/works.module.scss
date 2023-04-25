@@ -10,7 +10,11 @@
     padding-block: 19.4rem 15.2rem;
   }
 }
-.title {
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
   margin-bottom: 2.4rem;
   padding-inline: 1.2rem;
   
@@ -18,7 +22,7 @@
     margin-bottom: 3.2rem;
   }
 }
-.titleText {
+.title {
   font-size: 3.2rem;
   color: s.$text-color;
   font-weight: 700;
@@ -32,6 +36,88 @@
   @include s.mq(md) {
     font-size: 6rem;
     font-weight: 400;
+  }
+}
+.moreLink {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: fit-content;
+  
+  @include s.mq(sm) {
+    gap: 1.2rem;
+  }
+
+  @include s.hover {
+    &:hover {
+      .button {
+        background-color: s.$accent-color;
+      }
+      .buttonImage {
+        transform: translateX(5rem);
+      }
+      .buttonImageHover {
+        transform: translateX(0);
+      }
+    }
+  }
+}
+.moreLinkText {
+  font-size: 1.4rem;
+  color: s.$text-color;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  @include s.mq(sm) {
+    font-size: 1.6rem;
+  }
+}
+.button {
+  display: grid;
+  grid-template-rows: 3.2rem;
+  grid-template-columns: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0.1rem solid s.$text-color;
+  border-radius: 100vmax;
+  margin-left: auto;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+
+  @include s.mq(sm) {
+    grid-template-rows: 4.8rem;
+    grid-template-columns: 1.6rem;
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+}
+.buttonImage {
+  display: block;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  width: 1.2rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+
+  @include s.mq(sm) {
+    width: 1.6rem;
+    height: 1.4rem;
+  }
+}
+.buttonImageHover {
+  display: block;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  width: 1.2rem;
+  height: 1rem;
+  transform: translateX(-5rem);
+  transition: transform 0.3s ease;
+  
+  @include s.mq(sm) {
+    width: 1.6rem;
+    height: 1.4rem;
   }
 }
 .item {
