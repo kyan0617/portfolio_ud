@@ -25,6 +25,7 @@
   border: 0.1rem solid s.$main-color;
   border-top: 0.8rem solid s.$main-color;
   border-bottom: 0.8rem solid s.$main-color;
+  margin-bottom: 6.4rem;
 }
 .item:not(:last-of-type) {
   border-bottom: 0.1rem dashed s.$main-color;
@@ -107,5 +108,50 @@
       border-left: 0.5rem solid #fff;
       transform: translateX(0.5rem);
     }
+  }
+}
+.GoTopButton {
+  max-width: 20rem;
+  width: 100%;
+  margin-inline: auto;
+
+  @include s.mq(md) {
+    max-width: 24rem;
+  }
+}
+.GoTopLink {
+  display: block;
+  position: relative;
+  font-size: 1.8rem;
+  text-align: right;
+  border: 0.1rem solid #423F3C;
+  padding: 1.6rem;
+  transition: letter-spacing 0.3s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 6rem;
+    height: 0.1rem;
+    top: 50%;
+    left: -12%;
+    transform: translateY(-50%);
+    background-color: #423F3C;
+    transition: right 0.3s ease;
+  }
+
+  @include s.hover {
+    &:hover {
+      letter-spacing: 0.05em;
+
+      &::after {
+        right: -15%;
+      }
+    }  
+  }
+  @include s.mq(md) {
+    font-size: 2rem;
+    padding: 2rem 1.6rem;
   }
 }
