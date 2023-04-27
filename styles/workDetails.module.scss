@@ -110,7 +110,7 @@
   font-size: 1.6rem;
   border: 0.1rem solid #423F3C;
   padding: 1rem 1.2rem;
-  transition: letter-spacing 0.3s ease;
+  transition: letter-spacing 0.3s ease, background-color 0.3s ease;
 
   &::after {
     content: '';
@@ -142,6 +142,7 @@
   @include s.hover {
     &:hover {
       letter-spacing: 0.05em;
+      background-color: rgba(255, 255, 255, 0.35);
 
       &::after {
         right: -15%;

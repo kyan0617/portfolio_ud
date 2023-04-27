@@ -1,5 +1,5 @@
 @use "settings" as s;
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Outfit:wght@400;700&display=swap');
 
 /*----------------------
   初期設定
@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
   background-color: #fff;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Outfit', 'Noto Sans JP', sans-serif;
   font-weight: 400;
   font-feature-settings: "palt";
   font-size: 1.6rem;

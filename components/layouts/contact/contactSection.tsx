@@ -11,7 +11,7 @@ export default function ContactSection() {
               contact
             </h2>
             <div className={styles.main}>
-              <a href="" className={styles.link}>
+              <a href="/contact" className={styles.link}>
                 <div className={styles.content}>
                   <p className={styles.text}>
                     お問い合わせはこちら

@@ -126,7 +126,7 @@
   text-align: right;
   border: 0.1rem solid #423F3C;
   padding: 1.6rem;
-  transition: letter-spacing 0.3s ease;
+  transition: letter-spacing 0.3s ease, background-color 0.3s ease;
 
   &::after {
     content: '';
@@ -138,15 +138,16 @@
     left: -12%;
     transform: translateY(-50%);
     background-color: #423F3C;
-    transition: right 0.3s ease;
+    transition: left 0.3s ease;
   }
 
   @include s.hover {
     &:hover {
       letter-spacing: 0.05em;
+      background-color: rgba(255, 255, 255, 0.35);
 
       &::after {
-        right: -15%;
+        left: -15%;
       }
     }  
   }
