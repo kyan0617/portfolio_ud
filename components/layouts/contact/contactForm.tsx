@@ -1,25 +1,42 @@
 import styles from '../../../styles/contactForm.module.scss';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import React, { SyntheticEvent } from 'react';
+
 
 type FormValues = {
+  company: string;
   name: string;
   email: string;
   message: string;
 }
 
+
 export default function WorkDetails() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>();
 
-  const onSubmit = async (data: FormValues) => {
-    try {
-      const response = await axios.post('/api/sendMail', data);
-      console.log(response.data);
-      reset();
-    } catch (error) {
-      console.error(error);
-    }
+  const onSubmit = async (event: SyntheticEvent) => {
+    event.preventDefault();
+
+    const company = (event.target as HTMLFormElement).elements.namedItem("company") as HTMLInputElement;
+    const name = (event.target as HTMLFormElement).elements.namedItem("name") as HTMLInputElement;
+    const email = (event.target as HTMLFormElement).elements.namedItem("email") as HTMLInputElement;
+    const message = (event.target as HTMLFormElement).elements.namedItem("message") as HTMLInputElement;
+
+    const res = await fetch('/pages/api/contact', {
+      body: JSON.stringify({
+        company: company.value,
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST'
+    });
+
+    const result = await res.json()
   }
 
   return (
@@ -46,7 +63,7 @@ export default function WorkDetails() {
                 1週間経っても返信が届かない場合は、メールアドレスと受信設定をご確認の上お手数ではございますが改めてご連絡ください。
               </li>
             </ul>
-            <form action="" className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
               <div className={styles.unit}>
                 <label htmlFor="company" className={styles.label}>会社名 / 屋号</label>
                 <input id="company" type="text" className={styles.input} placeholder="例) 〇〇株式会社" name="company" />

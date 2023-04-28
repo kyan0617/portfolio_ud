@@ -16,8 +16,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     (async () => {
       try {
         response = await sgMail.send(msg);
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        console.error(error);
         if (error.response) {
           console.error(error.response.body);
         }
@@ -25,6 +25,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     })();
   }
 
-  res.status(200);
-  res.send(response);
+  res.status(200).json(response);
 }
