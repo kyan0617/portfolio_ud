@@ -1,5 +1,7 @@
 import styles from '../../../styles/contact.module.scss';
 import Image from "next/legacy/image";
+import Link from 'next/link';
+
 
 export default function ContactSection() {
   return (
@@ -11,7 +13,7 @@ export default function ContactSection() {
               contact
             </h2>
             <div className={styles.main}>
-              <a href="/contact" className={styles.link}>
+              <Link href="/contact" className={styles.link}>
                 <div className={styles.content}>
                   <p className={styles.text}>
                     お問い合わせはこちら
@@ -23,7 +25,7 @@ export default function ContactSection() {
                 <div className={styles.img}>
                   <Image src='/src/img/contact.svg' layout='responsive' objectFit='contain' alt='arrow' width={32} height={32} />
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

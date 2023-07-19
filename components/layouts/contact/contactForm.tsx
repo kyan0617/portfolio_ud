@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import styles from '../../../styles/contactForm.module.scss';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
-import React, { SyntheticEvent } from 'react';
 
 
 type FormValues = {
@@ -13,31 +13,18 @@ type FormValues = {
 
 
 export default function WorkDetails() {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
+  
+  const onSubmit = (data: FormValues) => {
+    console.log(data); // フォームのデータを適切な処理で扱う
+    setSubmitted(true); // submittedフラグを設定
+  };
 
-  const onSubmit = async (event: SyntheticEvent) => {
-    event.preventDefault();
-
-    const company = (event.target as HTMLFormElement).elements.namedItem("company") as HTMLInputElement;
-    const name = (event.target as HTMLFormElement).elements.namedItem("name") as HTMLInputElement;
-    const email = (event.target as HTMLFormElement).elements.namedItem("email") as HTMLInputElement;
-    const message = (event.target as HTMLFormElement).elements.namedItem("message") as HTMLInputElement;
-
-    const res = await fetch('/pages/api/contact', {
-      body: JSON.stringify({
-        company: company.value,
-        name: name.value,
-        email: email.value,
-        message: message.value,
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    });
-
-    const result = await res.json()
-  }
+  let [submitted, setSubmitted] = useState(false);
 
   return (
     <>
@@ -63,29 +50,45 @@ export default function WorkDetails() {
                 1週間経っても返信が届かない場合は、メールアドレスと受信設定をご確認の上お手数ではございますが改めてご連絡ください。
               </li>
             </ul>
-            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+
+            <form
+              className={styles.form}
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSevGjhTJzyeCB6FwE4_CL8iyXBQgCiob15FM8TNCdsWEnggCA/formResponse"
+              method="post"
+              target="hidden_iframe"
+            >
               <div className={styles.unit}>
                 <label htmlFor="company" className={styles.label}>会社名 / 屋号</label>
-                <input id="company" type="text" className={styles.input} placeholder="例) 〇〇株式会社" name="company" />
+                <input id="company" type="text" className={styles.input} placeholder="例) 〇〇株式会社" name="entry.1008989837" />
               </div>
               <div className={styles.unit}>
                 <label htmlFor="name" className={styles.label}>お名前<span className={styles.required}>*</span></label>
-                <input id="name" type="text" className={styles.input} placeholder="例) 山田太郎" {...register("name", { required: true })} />
+                <input id="name" type="text" className={styles.input} placeholder="例) 山田太郎" {...register("name", { required: true })} name="entry.450422882" />
                 {errors.name && <span className={styles.error}>お名前は必須項目です。</span>}
               </div>
               <div className={styles.unit}>
                 <label htmlFor="mail" className={styles.label}>メールアドレス<span className={styles.required}>*</span></label>
-                <input id="mail" type="email" className={styles.input} placeholder="例) sample@xxx.com" {...register("email", { required: true })} />
+                <input id="mail" type="email" className={styles.input} placeholder="例) sample@xxx.com" {...register("email", { required: true })} name="entry.1806869231" />
                 {errors.email && <span className={styles.error}>メールアドレスは必須項目です。</span>}
               </div>
               <div className={styles.textareaUnit}>
                 <label htmlFor="message" className={styles.label}>お問い合わせ内容<span className={styles.required}>*</span></label>
-                <textarea id="message" className={styles.textarea} placeholder="例) 〇〇について相談したいです。" {...register("message", { required: true })}></textarea>
+                <textarea id="message" className={styles.textarea} placeholder="例) 〇〇について相談したいです。" {...register("message", { required: true })} name="entry.361435846"></textarea>
                 {errors.message && <span className={styles.error}>お問い合わせ内容は必須項目です。</span>}
               </div>
               <div className={styles.button}>
-                <input type="submit" value="送信する" className={styles.submit} />
+                <button type="submit" className={styles.submit} onSubmit={(e) => submitted=true}>送信する</button>
               </div>
+              <iframe
+                name="hidden_iframe"
+                id="hidden_iframe"
+                style={{ display: 'none' }}
+                onLoad={() => {
+                  if (submitted) {
+                    window.location.href = '/';
+                  }
+                }}
+              ></iframe>
             </form>
           </div>
           <div className={styles.topButton}>
