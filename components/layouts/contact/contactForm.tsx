@@ -83,11 +83,6 @@ export default function WorkDetails() {
                 name="hidden_iframe"
                 id="hidden_iframe"
                 style={{ display: 'none' }}
-                onLoad={() => {
-                  if (submitted) {
-                    window.location.href = '/';
-                  }
-                }}
               ></iframe>
             </form>
           </div>
