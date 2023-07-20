@@ -1,30 +1,54 @@
 import { useState } from 'react';
 import styles from '../../../styles/contactForm.module.scss';
 import Link from 'next/link';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from "react-hook-form";
 
+// 先ほど取得したGoogleForm関連データ
+import ContactGoogleForm from '@/pages/api/contact'
+
+// axios
+import axios from 'axios'
 
 type FormValues = {
   company: string;
-  name: string;
+  fullName: string;
   email: string;
   message: string;
 }
 
 
 export default function WorkDetails() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>();
-  
-  const onSubmit = (data: FormValues) => {
-    console.log(data); // フォームのデータを適切な処理で扱う
-    setSubmitted(true); // submittedフラグを設定
-  };
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
+  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
 
-  let [submitted, setSubmitted] = useState(false);
+  const submit = (values: any) => {
+    console.log(values);
+    // ReactHookFormは、hundleSubmitに渡した関数に、
+    // registerを利用して登録した各Inputの値をObjectとして渡されてくる。
+    // values.nameやvalues.genderと呼び出せる。便利ですね！
+  
+    const GOOGLE_FORM_ACTION = ContactGoogleForm.action
+    // CORS対策は必須
+    const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
+  
+    // PostのParm生成
+    const submitParams = new FormData()
+    submitParams.append(ContactGoogleForm.company, values.company)
+    submitParams.append(ContactGoogleForm.name, values.name)
+    submitParams.append(ContactGoogleForm.email, values.email)
+    submitParams.append(ContactGoogleForm.message, values.message)
+  
+    // 実行
+    axios
+      .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
+      .then(() => {
+        // window.location.href = '/thanks' // 成功時
+        console.log('送信完了!!');
+      })
+      .catch((error) => {
+        console.log(error) // 失敗時
+      })
+  }
 
   return (
     <>
@@ -53,37 +77,30 @@ export default function WorkDetails() {
 
             <form
               className={styles.form}
-              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSevGjhTJzyeCB6FwE4_CL8iyXBQgCiob15FM8TNCdsWEnggCA/formResponse?embedded=true"
-              method="post"
-              target="hidden_iframe"
+              onSubmit={handleSubmit(submit)}
             >
               <div className={styles.unit}>
                 <label htmlFor="company" className={styles.label}>会社名 / 屋号</label>
-                <input id="company" type="text" className={styles.input} placeholder="例) 〇〇株式会社" name="entry.1008989837" />
+                <input id="company" type="text" className={styles.input} placeholder="例) 〇〇株式会社" {...register("company")}/>
               </div>
               <div className={styles.unit}>
                 <label htmlFor="name" className={styles.label}>お名前<span className={styles.required}>*</span></label>
-                <input id="name" type="text" className={styles.input} placeholder="例) 山田太郎" {...register("name", { required: true })} name="entry.450422882" />
-                {errors.name && <span className={styles.error}>お名前は必須項目です。</span>}
+                <input type="text" className={styles.input} placeholder="例) 山田太郎" {...register("fullName", { required: true })}/>
+                {errors.fullName && <span className={styles.error}>お名前は必須項目です。</span>}
               </div>
               <div className={styles.unit}>
                 <label htmlFor="mail" className={styles.label}>メールアドレス<span className={styles.required}>*</span></label>
-                <input id="mail" type="email" className={styles.input} placeholder="例) sample@xxx.com" {...register("email", { required: true })} name="entry.1806869231" />
+                <input id="mail" type="email" className={styles.input} placeholder="例) sample@xxx.com" {...register("email", { required: true })}/>
                 {errors.email && <span className={styles.error}>メールアドレスは必須項目です。</span>}
               </div>
               <div className={styles.textareaUnit}>
                 <label htmlFor="message" className={styles.label}>お問い合わせ内容<span className={styles.required}>*</span></label>
-                <textarea id="message" className={styles.textarea} placeholder="例) 〇〇について相談したいです。" {...register("message", { required: true })} name="entry.361435846"></textarea>
+                <textarea id="message" className={styles.textarea} placeholder="例) 〇〇について相談したいです。" {...register("message", { required: true })}></textarea>
                 {errors.message && <span className={styles.error}>お問い合わせ内容は必須項目です。</span>}
               </div>
               <div className={styles.button}>
-                <button type="submit" className={styles.submit} onSubmit={(e) => submitted=true}>送信する</button>
+                <input value="送信する" type="submit" className={styles.submit} />
               </div>
-              <iframe
-                name="hidden_iframe"
-                id="hidden_iframe"
-                style={{ display: 'none' }}
-              ></iframe>
             </form>
           </div>
           <div className={styles.topButton}>
