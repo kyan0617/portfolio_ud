@@ -53,7 +53,7 @@ export default function WorkDetails() {
 
             <form
               className={styles.form}
-              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSevGjhTJzyeCB6FwE4_CL8iyXBQgCiob15FM8TNCdsWEnggCA/formResponse"
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSevGjhTJzyeCB6FwE4_CL8iyXBQgCiob15FM8TNCdsWEnggCA/formResponse?embedded=true"
               method="post"
               target="hidden_iframe"
             >
