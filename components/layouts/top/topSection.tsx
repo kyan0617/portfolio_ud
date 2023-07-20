@@ -6,11 +6,14 @@ export default function Top() {
     <>
       <section className={styles.container}>
         <div className={styles.inner}>
+          <span className={`${styles["dashedColumnLine"]} js-columnLine`}></span>
+          <span className={`${styles["dashedRowLine"]} js-RowLine`}></span>
           <div className={styles.title}>
             <span className={styles.large}>thanks for visiting</span>
             <span className={styles.small}>my portfolio</span>
           </div>
           <div className={styles.card}>
+            <span className={`${styles["cardDashedLine"]} js-columnLine`}></span>
             <div className={styles.cardInner}>
               <div className={styles.left}>
                 <div className={styles.img}>

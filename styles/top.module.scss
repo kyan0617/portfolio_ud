@@ -19,6 +19,32 @@
     bottom: 0;
   }
 }
+.dashedColumnLine {
+  display: block;
+  width: 0.2rem;
+  height: 58.2rem;
+  position: absolute;
+  top: 0;
+  right: 12.6%;
+  background-image: linear-gradient(to bottom, #F8B881, #F8B881 1.2rem, transparent 0.8rem, transparent 2.4rem);
+  background-size: 0.1rem 2.4rem;
+  background-position: left bottom;
+  background-repeat: repeat-y;
+  z-index: -1;
+}
+.dashedRowLine {
+  display: block;
+  width: 58.2rem;
+  height: 0.2rem;
+  position: absolute;
+  top: 72rem;
+  right: 0;
+  background-image: linear-gradient(to right, #F8B881, #F8B881 1.2rem, transparent 0.8rem, transparent 2.4rem);
+  background-size: 2.4rem 0.1rem;
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  z-index: -1;
+}
 .title {
   margin-bottom: 3.2rem;
 }
@@ -38,6 +64,22 @@
   color: s.$text-color;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+}
+.card {
+  position: relative;
+}
+.cardDashedLine {
+  display: block;
+  width: 0.2rem;
+  height: 72.5rem;
+  position: absolute;
+  top: -8%;
+  left: 12.6%;
+  background-image: linear-gradient(to bottom, #F8B881, #F8B881 1.2rem, transparent 0.8rem, transparent 2.4rem);
+  background-size: 0.1rem 2.4rem;
+  background-position: left bottom;
+  background-repeat: repeat-y;
+  z-index: -1;
 }
 .cardInner {
   width: 100%;

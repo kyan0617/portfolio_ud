@@ -4,13 +4,25 @@ import type { Works } from '../types/works';
 import type { Blog } from '../types/blog';
 import { client } from '../libs/client';
 import { clientBlog } from '../libs/client';
-import TopSection from '../components/layouts/top/topSection'
-import AboutSection from '../components/layouts/about/aboutSection'
-import WorksSection from '../components/layouts/works/worksSection'
-import SkillsSection from '../components/layouts/skills/skillsSection'
-import BlogSection from '../components/layouts/blog/blogSection'
-import ContactSection from '../components/layouts/contact/contactSection'
-import FooterSection from '../components/layouts/footer/footerSection'
+import TopSection from '../components/layouts/top/topSection';
+import AboutSection from '../components/layouts/about/aboutSection';
+import WorksSection from '../components/layouts/works/worksSection';
+import SkillsSection from '../components/layouts/skills/skillsSection';
+import BlogSection from '../components/layouts/blog/blogSection';
+import ContactSection from '../components/layouts/contact/contactSection';
+import FooterSection from '../components/layouts/footer/footerSection';
+
+// GSAP のインポート
+import Gsap from 'gsap';
+
+// ScrollTrigger のインポート
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+// ScrollTriggerの初期化
+Gsap.registerPlugin(ScrollTrigger);
+Gsap.config({
+    nullTargetWarn: false,
+});
 
 type Props = {
   works: Array<Works>;
