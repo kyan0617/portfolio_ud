@@ -1,0 +1,45 @@
+@use "settings" as s;
+
+.list {
+  padding: 3.2rem;
+
+  @include s.mq(sm) {
+    padding: 0 3.2rem 4rem 6.2rem;
+  }
+  @include s.mq(md) {
+    padding: 0 3.2rem 5rem 9.2rem;
+  }
+}
+.item {
+  position: relative;
+  font-size: 1.8rem;
+  color: s.$text-color;
+  line-height: 1.55;
+  margin-bottom: 1.6rem;
+  padding-left: 2.8rem;
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 0.1rem solid s.$accent-color;
+    border-radius: 100vmax;
+    transform: translateY(-50%);
+  }
+
+  &.isActive {
+    font-weight: 700;
+    
+    &::before {
+      background-color: s.$accent-color;
+    }
+  }
+}

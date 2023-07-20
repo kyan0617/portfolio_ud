@@ -1,0 +1,19 @@
+@use "settings" as s;
+
+.inner {
+  padding-block: 3.2rem 2rem;
+  
+  @include s.mq(sm) {
+    padding-block: 5.6rem 2.4rem;
+  }
+}
+.copyright {
+  display: block;
+  font-size: 1rem;
+  color: s.$text-color;
+  text-align: center;
+
+  @include s.mq(sm) {
+    font-size: 1.2rem;
+  }
+}

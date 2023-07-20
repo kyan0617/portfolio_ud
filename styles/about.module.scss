@@ -1,0 +1,114 @@
+@use "settings" as s;
+
+.inner {
+  max-width: 148rem;
+  width: 100%;
+  margin-inline: auto;
+  padding-block: 6.4rem 8rem;
+}
+.img {
+  max-width: 95%;
+  width: 100%;
+  margin-left: auto;
+  overflow: hidden;
+  margin-bottom: 9.3rem;
+  
+  img {
+    border-radius: 2rem 0 0 2rem;
+  }
+}
+.main {
+  padding-inline: 2rem;
+}
+.title {
+  position: relative;
+  text-align: right;
+  margin-bottom: 2.4rem;
+}
+.titleText {
+  display: block;
+  position: absolute;
+  top: -5.6rem;
+  right: 0;
+  font-size: 6.4rem;
+  color: s.$main-color;
+  letter-spacing: s.$ls;
+  text-transform: uppercase;
+  z-index: 0;
+}
+.name {
+  position: relative;
+  font-size: 3.2rem;
+  color: s.$text-color;
+  letter-spacing: 0.1em;
+  z-index: 100;
+}
+.text {
+  font-size: 1.6rem;
+  color: s.$text-color;
+  line-height: 2.5;
+}
+
+@include s.mq(sm) {
+  .inner {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 31.2rem 0 8.8rem 2.6%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      max-width: 47%;
+      width: 100%;
+      height: 0.1rem;
+      background-color: s.$main-color;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .img {
+    max-width: 50%;
+    width: 100%;
+  }
+  .main {
+    padding-inline: 0 2.6rem;
+  }
+  .title {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 3.6rem;
+  }
+  .titleText {
+    font-size: 11.11vw;
+    top: -7rem;
+  }
+  .name {
+    font-size: 4rem;
+  }
+}
+@include s.mq(md) {
+  .main {
+    padding-inline: 2.6rem;
+  }
+  .img {
+    margin-left: 0;
+  }
+  .titleText {
+    top: -11rem;
+  }
+  .name {
+    font-size: 5.4rem;
+  }
+}
+
+@include s.mq(xl) {
+  .titleText {
+    font-size: 16rem;
+    top: -14.5rem;
+  }
+  .name {
+    font-size: 5.6rem;
+  }
+}

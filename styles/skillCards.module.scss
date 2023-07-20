@@ -1,0 +1,84 @@
+@use "settings" as s;
+
+.cardList {
+  position: relative;
+  max-width: 32rem;
+  width: 100%;
+
+  @include s.mq(sm) {
+    max-width: 40rem;
+  }
+}
+.card {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 2rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+  
+  &:first-of-type {
+    position: relative;
+  }
+  &:last-of-type {
+    opacity: 1;
+    z-index: 100;
+  }
+  &.isActive {
+    animation: topCard 1s;
+    z-index: 200;
+    opacity: 1;
+    box-shadow: 0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.1);
+  }
+  &.isActivePrev {
+    opacity: 1;
+    z-index: 150;
+  }
+}
+.cardImage {
+  width: 100%;
+  background-color: rgba(s.$main-color, 0.5);
+  border-radius: 2rem 2rem 0 0;
+  animation: fadeIn 1s;
+}
+.content {
+  padding: 4.2rem 1.6rem 3.2rem;
+
+  @include s.mq(sm) {
+    padding: 3.2rem;
+  }
+}
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: s.$text-color;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.6rem;
+
+  @include s.mq(sm) {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+}
+.text {
+  font-size: 1.6rem;
+  color: s.$text-color;
+  line-height: 1.75;
+}
+
+@keyframes topCard {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(3rem, -1rem);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}

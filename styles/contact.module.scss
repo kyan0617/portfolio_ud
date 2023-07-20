@@ -1,0 +1,108 @@
+@use "settings" as s;
+
+.wrapper {
+  background-color: s.$accent-color;
+  padding: 6.4rem 2rem;
+
+  @include s.mq(sm) {
+    padding: 7.6rem 3.2rem;
+  }
+  @include s.mq(md) {
+    padding-block: 8.8rem;
+  }
+}
+.title {
+  font-size: 3.2rem;
+  color: #fff;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 3.2rem;
+
+  @include s.mq(sm) {
+    font-size: 4.6rem;
+    line-height: 2;
+    margin-bottom: 0;
+  }
+  @include s.mq(md) {
+    font-size: 6rem;
+  }
+}
+.main {
+  width: 100%;
+
+  @include s.mq(sm) {
+    max-width: 56.8rem;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding-block: 2.4rem;
+  border: 0.1rem dashed #fff;
+  transition: border-radius 0.3s ease, background-color 0.3s ease;
+  overflow-y: hidden;
+
+  @include s.mq(sm) {
+    gap: 1.5rem;
+  }
+  @include s.mq(md) {
+    gap: 2rem;
+  }
+}
+.content {
+  position: relative;
+}
+.text {
+  font-size: 1.8rem;
+  color: #fff;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+  @include s.mq(sm) {
+    font-size: 2rem;
+  }
+  @include s.mq(md) {
+    font-size: 2.4rem;
+  }
+}
+.textHover {
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  font-size: 1.8rem;
+  color: #fff;
+  opacity: 0;
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+
+  @include s.mq(sm) {
+    font-size: 2rem;
+  }
+  @include s.mq(md) {
+    font-size: 2.4rem;
+  }
+}
+.img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+@include s.hover {
+  .link:hover {
+    border-radius: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    .text {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    .textHover {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+}

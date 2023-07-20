@@ -1,0 +1,82 @@
+[
+  {
+    "image": {
+      "src": "/src/img/shopify_logo.webp",
+      "alt": "Shopify",
+      "width": 400,
+      "height": 240
+    },
+    "title": "Shopify構築(Liquid)",
+    "text": "Liquidを使用したショップカスタマイズが可能です。初期構築〜セクションカスタマイズまで対応しております。構築面の運用につきましてもお気軽にご相談くださいませ。"
+  },
+  {
+    "image": {
+      "src": "/src/img/wordpress_logo.webp",
+      "alt": "WordPress",
+      "width": 400,
+      "height": 240
+    },
+    "title": "WordPress",
+    "text": "オリジナルテーマの制作をしています。会社やお店、個人のHPなど完全オリジナルでそれぞれの特色を出しながら、更新しやすい構築を心がけております。"
+  },
+  {
+    "image": {
+      "src": "/src/img/html_css_logo.webp",
+      "alt": "HTML CSS",
+      "width": 400,
+      "height": 240
+    },
+    "title": "HTML・CSS",
+    "text": "レスポンシブに対応したサイト制作をしています。CSSはSCSSを使用し、FLOCSSもしくはBEM記法でコーディングいたします。"
+  },
+  {
+    "image": {
+      "src": "/src/img/js_ts_logo.webp",
+      "alt": "JavaScript TypeScript",
+      "width": 400,
+      "height": 240
+    },
+    "title": "JavaScript(TypeScript)",
+    "text": "ハンバーガーメニューやアニメーションなどWebサイトに動きをつけます。このサイトはTypeScriptを使用して制作いたしました。"
+  },
+  {
+    "image": {
+      "src": "/src/img/microcms_logo.webp",
+      "alt": "microCMS",
+      "width": 400,
+      "height": 240
+    },
+    "title": "microCMS",
+    "text": "microCMSを使った、オリジナルのサイトを制作いたします。このサイトもmicroCMSを使用しております。"
+  },
+  {
+    "image": {
+      "src": "/src/img/github_logo.webp",
+      "alt": "GitHub",
+      "width": 400,
+      "height": 240
+    },
+    "title": "GitHub",
+    "text": "チーム開発では、GitHubを使用しています。その他自主制作でもGitHubでバージョン管理を行なっております。"
+  },
+  {
+    "image": {
+      "src": "/src/img/react_logo.webp",
+      "alt": "React",
+      "width": 400,
+      "height": 240
+    },
+    "title": "React(Next.js)",
+    "text": "こちらのサイトはNext.jsを使用しております。まだまだ未熟ではありますが、これからも学習を進めていきます。"
+  },
+  {
+    "image": {
+      "src": "/src/img/vercel_logo.webp",
+      "alt": "Vercel",
+      "width": 400,
+      "height": 240
+    },
+    "title": "Vercel",
+    "text": "こちらのサイトはVercelを使用してデプロイしています。"
+  }
+]

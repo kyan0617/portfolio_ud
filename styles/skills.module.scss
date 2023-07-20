@@ -1,0 +1,53 @@
+@use "settings" as s;
+
+.wrapper {
+  padding: 0 2rem 8rem;
+}
+.title {
+  margin-bottom: 2.4rem;
+}
+.titleText {
+  font-size: 3.2rem;
+  color: s.$text-color;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  
+  @include s.mq(sm) {
+    font-size: 4.6rem;
+  }
+
+  @include s.mq(md) {
+    font-size: 6rem;
+    font-weight: 400;
+  }
+}
+.content {
+  width: 100%;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 1.6rem;
+    max-width: 32rem;
+    width: 100%;
+    height: calc(100% - 8.4rem);
+    border: 0.1rem dashed s.$border-color;
+  }
+
+  @include s.mq(sm) {
+    max-width: 88.8rem;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 4.4rem;
+
+    &::before {
+      max-width: 100%;
+      height: calc(100% - 4.2rem);
+    }
+  }
+}

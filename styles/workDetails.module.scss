@@ -1,0 +1,213 @@
+@use "settings" as s;
+
+.inner {
+  padding: 4rem 2rem;
+
+  @include s.mq(sm) {
+    padding: 8rem 3.2rem;
+  }
+}
+.heading {
+  font-size: 2rem;
+  color: s.$accent-color;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+
+  @include s.mq(sm) {
+    font-size: 2.4rem;
+    margin-bottom: 3.2rem;
+  }
+  @include s.mq(md) {
+    font-size: 2.8rem;
+  }
+}
+.box {
+  width: 100%;
+  border: 0.1rem solid s.$main-color;
+  border-top: 0.8rem solid s.$main-color;
+  border-bottom: 0.8rem solid s.$main-color;
+  margin-bottom: 4rem;
+  padding: 4rem 2.4rem;
+
+  @include s.mq(sm) {
+    margin-bottom: 6.4rem;
+  }
+  @include s.mq(md) {
+    margin-bottom: 8rem;
+  }
+}
+.img {
+  width: 100%;
+  margin-bottom: 4rem;
+
+  @include s.mq(sm) {
+    margin-bottom: 6rem;
+  }
+  @include s.mq(md) {
+    margin-bottom: 7.2rem;
+  }
+}
+.details {
+ margin-bottom: 6rem;
+
+ @include s.mq(sm) {
+  margin-bottom: 8rem;
+ }
+}
+.unit:not(:last-of-type) {
+  margin-bottom: 3.2rem;
+
+  @include s.mq(md) {
+    margin-bottom: 4.8rem;
+  }
+}
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: s.$main-color;
+  border-bottom: 0.1rem solid s.$main-color;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+
+  @include s.mq(sm) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  @include s.mq(md) {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+}
+.text {
+  font-size: 1.4rem;
+
+  @include s.mq(md) {
+    font-size: 1.6rem;
+  }
+}
+.buttons {
+
+  @include s.mq(sm) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+.button {
+  max-width: 18rem;
+  width: 100%;
+  margin-inline: auto;
+  
+  @include s.mq(sm) {
+    max-width: 20rem;
+  }
+  @include s.mq(md) {
+    max-width: 24rem;
+  }
+}
+.link {
+  display: block;
+  position: relative;
+  font-size: 1.6rem;
+  border: 0.1rem solid #423F3C;
+  padding: 1rem 1.2rem;
+  transition: letter-spacing 0.3s ease, background-color 0.3s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 6rem;
+    height: 0.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #423F3C;
+    transition: right 0.3s ease;
+  }
+  
+  &.linkLeft {
+    text-align: right;
+
+    &::after {
+      left: -12%;
+    }
+  }
+  &.linkRight {
+    margin-bottom: 2.4rem;
+
+    &::after {
+      right: -12%;
+    }
+  }
+
+  @include s.hover {
+    &:hover {
+      letter-spacing: 0.05em;
+      background-color: rgba(255, 255, 255, 0.35);
+
+      &::after {
+        right: -15%;
+      }
+    }  
+  }
+  @include s.mq(sm) {
+    font-size: 1.8rem;
+    padding: 1.6rem 2.4rem;
+
+    &.linkRight {
+      margin-bottom: 0;
+    }
+  }
+  @include s.mq(md) {
+    font-size: 2rem;
+    padding: 2rem 1.6rem;
+  }
+}
+.topButton {
+  border-top: 0.1rem solid s.$main-color;
+  border-bottom: 0.1rem solid s.$main-color;
+
+  @include s.mq(sm) {
+    width: 40rem;
+    margin-inline: auto;
+  }
+}
+.topLink {
+  display: block;
+  font-size: 1.4rem;
+  color: s.$main-color;
+  line-height: 1.7;
+  text-align: center;
+  transition: color 0.3s ease, background-color 0.3s ease;
+
+  @include s.hover {
+    &:hover {
+      background-color: s.$main-color;
+      color: #fff;
+
+      .arrow {
+        border-right: 0.5rem solid #fff;
+        transform: translateX(-0.5rem);
+      }
+    }
+  }
+
+  @include s.mq(md) {
+    font-size: 1.8rem;
+  }
+}
+.arrow {
+  display: inline-block;
+  width: 0.5rem;
+	height: 0.5rem;
+	border: 0.5rem solid transparent;
+	border-right: 0.5rem solid s.$main-color;
+  margin-right: 0.8rem;
+  transition: border-right 0.3s ease, transform 0.3s ease 0.2s;
+
+  @include s.mq(md) {
+    width: 0.6rem;
+    height: 0.6rem;
+    border: 0.6rem solid transparent;
+    border-right: 0.6rem solid s.$main-color;
+  }
+}

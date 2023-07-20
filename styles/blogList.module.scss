@@ -1,0 +1,247 @@
+@use "settings" as s;
+
+.list {
+  @include s.mq(sm) {
+    display: grid;
+    grid-template-rows: 16rem 16rem 7.8rem;
+    grid-template-columns: minmax(20rem, 32.8rem) auto;
+    align-content: start;
+    gap: 4rem 4.8rem;
+  }
+}
+.firstItem {
+  max-width: 82%;
+  width: 100%;
+  box-shadow: 0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.25);;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin-bottom: 5.6rem;
+  
+  @include s.mq(sm) {
+    max-width: 32.8rem;
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    align-self: start;
+  }
+
+  .link {
+    display: block;
+    width: 100%;
+
+    @include s.hover {
+      &:hover {
+        .button {
+          background-color: s.$accent-color;
+        }
+        .buttonImage {
+          transform: translateX(5rem);
+        }
+        .buttonImageHover {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  .img {
+    width: 100%;
+  }
+  .detail {
+    width: 100%;
+    background-color: s.$main-color;
+    padding: 3.2rem 1.6rem;
+
+    @include s.mq(sm) {
+      padding-inline: 2rem;
+    }
+    @include s.mq(md) {
+      padding-inline: 2.4rem;
+    }
+  }
+  .title {
+    font-size: 1.6rem;
+    color: s.$text-color;
+    line-height: 2;
+    margin-bottom: 3.2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    @include s.mq(sm) {
+      font-size: 2rem;
+      margin-bottom: 2.4;
+    }
+    @include s.mq(md) {
+      font-size: 2.4rem;
+      margin-bottom: 0;
+    }
+  }
+  .button {
+    background-color: transparent;
+  }
+}
+.item {
+  max-width: 68%;
+  width: 100%;
+  margin-left: auto;
+  margin-bottom: 3.2rem;
+  padding-right: 4rem;
+
+  @include s.mq(sm) {
+    max-width: 100%;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    padding-right: 2.4rem;
+    margin-bottom: 0;
+    
+    &:nth-of-type(3) {
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+    }
+  }
+  @include s.mq(md) {
+    padding-right: 4.2rem;
+  }
+
+  .link {
+    display: block;
+    width: 100%;
+
+    @include s.mq(sm) {
+      display: flex;
+      align-items: flex-start;
+      column-gap: 1.6rem;
+    }
+    @include s.mq(md) {
+      column-gap: 2.4rem;
+    }
+
+    @include s.hover {
+      &:hover {
+        .button {
+          background-color: s.$accent-color;
+        }
+        .buttonImage {
+          transform: translateX(5rem);
+        }
+        .buttonImageHover {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  .img {
+    width: 100%;
+    margin-bottom: 2.2rem;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    @include s.mq(sm) {
+      max-width: 24rem;
+      margin-bottom: 0;
+    }
+  }
+  .title {
+    font-size: 1.6rem;
+    color: s.$text-color;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    @include s.mq(sm) {
+      font-size: 2rem;
+      line-height: 2;
+      margin-bottom: 1.6rem;
+    }
+    @include s.mq(md) {
+      font-size: 2.4rem;
+    }
+  }
+}
+.button {
+  display: grid;
+  grid-template-rows: 4.8rem;
+  grid-template-columns: 1.6rem;
+  justify-content: center;
+  align-items: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 0.1rem solid s.$text-color;
+  border-radius: 100vmax;
+  margin-left: auto;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+.buttonImage {
+  display: block;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  width: 1.6rem;
+  height: 1.4rem;
+  transition: transform 0.3s ease;
+}
+.buttonImageHover {
+  display: block;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  width: 1.6rem;
+  height: 1.4rem;
+  transform: translateX(-5rem);
+  transition: transform 0.3s ease;
+}
+.viewAll {
+  display: none;
+  text-align: right;
+  padding-right: 3.2rem;
+
+  @include s.mq(sm) {
+    display: block;
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    justify-self: end;
+    align-self: center;
+    padding-right: 1.6rem;
+  }
+  @include s.mq(md) {
+    margin-right: 0;
+  }
+}
+.viewAllLink {
+  display: inline-block;
+  position: relative;
+  font-size: 2rem;
+  color: s.$text-color;
+  line-height: 2;
+  padding-inline: 0.6rem;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.1rem;
+    right: 0;
+    bottom: -0.4rem;
+    left: 0;
+    background-color: s.$text-color;
+  }
+  &::before {
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: transform 0.3s ease;
+  }
+  @include s.hover {
+    &:hover {
+      &::before {
+        transform: scale(1, 1);
+      }
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}

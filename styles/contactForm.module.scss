@@ -1,0 +1,249 @@
+@use "settings" as s;
+
+.inner {
+  padding: 4rem 2rem;
+}
+.heading {
+  font-size: 5.4rem;
+  color: s.$text-color;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  
+  @include s.mq(sm) {
+    font-size: 7.2rem;
+  }
+
+  @include s.mq(md) {
+    font-size: 10.4rem;
+    font-weight: 400;
+  }
+}
+.headingJp {
+  display: block;
+  font-size: 2rem;
+  color: s.$text-color;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  margin-bottom: 2.8rem;
+
+  @include s.mq(sm) {
+    font-size: 2.4rem;
+  }
+
+  @include s.mq(md) {
+    font-size: 3.2rem;
+  }
+}
+.box {
+  width: 100%;
+  border: 0.1rem solid s.$main-color;
+  border-top: 0.8rem solid s.$main-color;
+  border-bottom: 0.8rem solid s.$main-color;
+  margin-bottom: 4rem;
+  padding: 4rem 2rem;
+
+  @include s.mq(sm) {
+    margin-bottom: 6.4rem;
+    padding: 4rem 3.2rem;
+  }
+  @include s.mq(md) {
+    margin-bottom: 8rem;
+    padding: 6.4rem 4rem;
+  }
+}
+.text {
+  font-size: 1.6rem;
+  color: s.$text-color;
+  line-height: 2;
+  margin-bottom: 2.4rem;
+}
+.list {
+  margin-bottom: 4rem;
+}
+.item {
+  position: relative;
+  font-size: 1.2rem;
+  color: s.$accent-color;
+  line-height: 2;
+  margin-bottom: 1.2rem;
+  padding-left: 1.2rem;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 100vmax;
+    top: 1rem;
+    left: 0;
+    background-color: s.$accent-color;
+  }
+
+  @include s.mq(sm) {
+    margin-bottom: 0.4rem;
+  }
+  @include s.mq(md) {
+    margin-bottom: 0;
+  }
+}
+.itemAccent {
+  color: s.$caution-color;
+}
+.unit {
+  margin-bottom: 2.4rem;
+}
+.textareaUnit {
+  margin-bottom: 4rem;
+
+  @include s.mq(md) {
+    margin-bottom: 6.4rem;
+  }
+}
+.label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: s.$text-color;
+  padding-bottom: 0.8rem;
+}
+.required {
+  color: s.$caution-color;
+  padding-left: 0.4rem;
+}
+.input {
+  width: 100%;
+  font-size: 1.4rem;
+  color: s.$text-color;
+  line-height: 1.5;
+  border-radius: 0.4rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #fff;
+
+  &::placeholder {
+    color: #a09994;
+  }
+
+  @include s.mq(md) {
+    padding: 1.4rem 1.6rem;
+  }
+}
+.textarea {
+  width: 100%;
+  min-height: 24rem;
+  font-size: 1.4rem;
+  color: s.$text-color;
+  line-height: 1.5;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  padding: 0.8rem 1.6rem;
+
+  &::placeholder {
+    color: #a09994;
+  }
+
+  @include s.mq(md) {
+    padding: 1.4rem 1.6rem;
+  }
+}
+.button {
+  max-width: 20rem;
+  width: 100%;
+  margin-inline: auto;
+  position: relative;
+  text-align: right;
+  border: 0.1rem solid #423F3C;
+  transition: letter-spacing 0.3s ease;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 6rem;
+    height: 0.1rem;
+    top: 50%;
+    left: -12%;
+    transform: translateY(-50%);
+    background-color: #423F3C;
+    transition: left 0.3s ease;
+  }
+
+  @include s.hover {
+    &:hover {
+      &::after {
+        left: -15%;
+      }
+      .submit {
+        letter-spacing: 0.05em;
+        background-color: rgba(255, 255, 255, 0.35);
+      }
+    }  
+  }
+  @include s.mq(md) {
+    max-width: 24rem;
+  }
+}
+.submit {
+  display: block;
+  width: 100%;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1.6rem;
+  transition: letter-spacing 0.3s ease, background-color 0.3s ease;
+
+  @include s.mq(md) {
+    font-size: 2rem;
+    padding: 2rem 1.6rem;
+  }
+}
+.topButton {
+  border-top: 0.1rem solid s.$main-color;
+  border-bottom: 0.1rem solid s.$main-color;
+
+  @include s.mq(sm) {
+    width: 40rem;
+    margin-inline: auto;
+  }
+}
+.topLink {
+  display: block;
+  font-size: 1.4rem;
+  color: s.$main-color;
+  line-height: 1.7;
+  text-align: center;
+  transition: color 0.3s ease, background-color 0.3s ease;
+
+  @include s.hover {
+    &:hover {
+      background-color: s.$main-color;
+      color: #fff;
+
+      .arrow {
+        border-right: 0.5rem solid #fff;
+        transform: translateX(-0.5rem);
+      }
+    }
+  }
+
+  @include s.mq(md) {
+    font-size: 1.8rem;
+  }
+}
+.arrow {
+  display: inline-block;
+  width: 0.5rem;
+	height: 0.5rem;
+	border: 0.5rem solid transparent;
+	border-right: 0.5rem solid s.$main-color;
+  margin-right: 0.8rem;
+  transition: border-right 0.3s ease, transform 0.3s ease 0.2s;
+
+  @include s.mq(md) {
+    width: 0.6rem;
+    height: 0.6rem;
+    border: 0.6rem solid transparent;
+    border-right: 0.6rem solid s.$main-color;
+  }
+}
