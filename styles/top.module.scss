@@ -22,7 +22,7 @@
 .dashedColumnLine {
   display: block;
   width: 0.2rem;
-  height: 58.2rem;
+  height: 0;
   position: absolute;
   top: 0;
   right: 12.6%;
@@ -34,7 +34,7 @@
 }
 .dashedRowLine {
   display: block;
-  width: 58.2rem;
+  width: 0;
   height: 0.2rem;
   position: absolute;
   top: 72rem;
@@ -73,7 +73,7 @@
   width: 0.2rem;
   height: 72.5rem;
   position: absolute;
-  top: -8%;
+  bottom: -100%;
   left: 12.6%;
   background-image: linear-gradient(to bottom, #F8B881, #F8B881 1.2rem, transparent 0.8rem, transparent 2.4rem);
   background-size: 0.1rem 2.4rem;
@@ -86,6 +86,8 @@
   background-color: #fff;
   border-radius: 2rem;
   box-shadow: 0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(-6rem);
 }
 .left {
   width: 100%;
@@ -144,6 +146,8 @@
   }
   .title {
     margin-bottom: 5.4rem;
+    opacity: 0;
+    transform: translateX(-4rem);
   }
   .large {
     font-size: 6.4rem;

@@ -1,20 +1,66 @@
+import React, {useEffect} from 'react';
 import styles from '../../../styles/top.module.scss';
 import Image from "next/legacy/image";
 
+// GSAP のインポート
+import {gsap, Power4} from 'gsap';
+
+// ScrollTrigger のインポート
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+// ScrollTriggerの初期化
+gsap.registerPlugin(ScrollTrigger);
+gsap.config({
+    nullTargetWarn: false,
+});
+
 export default function Top() {
+  // レイアウト作成後の動作
+  useEffect(() => {
+    const timeline = gsap.timeline();
+    timeline.to('.js-columnLineToBottom', {
+      height: '58.2rem',
+      ease: Power4.easeOut,
+      duration: 3,
+    });
+    timeline.to('.js-columnLineToTop', {
+      bottom: 'auto',
+      top: '-8%',
+      ease: Power4.easeOut,
+      duration: 3,
+    },"<");
+    timeline.to('.js-RowLine', {
+      width: '58.2rem',
+      ease: Power4.easeOut,
+      duration: 3,
+    },"<");
+    timeline.to('.js-fadeInBoxToRight', {
+      opacity: 1,
+      x: 0,
+      ease: Power4.easeOut,
+      duration: 3,
+    }, '<2');
+    timeline.to('.js-fadeInTextToRight', {
+      opacity: 1,
+      x: 0,
+      ease: Power4.easeOut,
+      duration: 3,
+    }, '<');
+  }, []);
+
   return (
     <>
       <section className={styles.container}>
         <div className={styles.inner}>
-          <span className={`${styles["dashedColumnLine"]} js-columnLine`}></span>
+          <span className={`${styles["dashedColumnLine"]} js-columnLineToBottom`}></span>
           <span className={`${styles["dashedRowLine"]} js-RowLine`}></span>
-          <div className={styles.title}>
+          <div className={`${styles.title} js-fadeInTextToRight`}>
             <span className={styles.large}>thanks for visiting</span>
             <span className={styles.small}>my portfolio</span>
           </div>
           <div className={styles.card}>
-            <span className={`${styles["cardDashedLine"]} js-columnLine`}></span>
-            <div className={styles.cardInner}>
+            <span className={`${styles["cardDashedLine"]} js-columnLineToTop`}></span>
+            <div className={`${styles.cardInner} js-fadeInBoxToRight`}>
               <div className={styles.left}>
                 <div className={styles.img}>
                   <Image src='/src/img/logo.svg' layout='responsive' objectFit='contain' alt='logo' width={283} height={127} />
