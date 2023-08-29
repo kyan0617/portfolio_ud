@@ -23,11 +23,18 @@
   }
 }
 .title {
+  display: flex;
   font-size: 3.2rem;
   color: s.$text-color;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+
+  > span {
+    display: block;
+    opacity: 0;
+    transform: scale(0.9) translateX(-2rem);
+  }
   
   @include s.mq(sm) {
     font-size: 4.6rem;
@@ -123,6 +130,8 @@
 .item {
   max-width: 70%;
   width: 100%;
+  opacity: 0;
+  transform: translateY(6rem);
   
   @include s.mq(md) {
     max-width: 44.8rem;

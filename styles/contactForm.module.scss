@@ -4,17 +4,26 @@
   padding: 4rem 2rem;
 }
 .heading {
+  margin-bottom: 1.2rem;
+}
+.headingEn {
+  display: flex;
   font-size: 5.4rem;
   color: s.$text-color;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 1.2rem;
+
+  > span {
+    display: block;
+    opacity: 0;
+    transform: scale(0.9) translateX(-2rem);
+  }
   
   @include s.mq(sm) {
     font-size: 7.2rem;
   }
-
+  
   @include s.mq(md) {
     font-size: 10.4rem;
     font-weight: 400;

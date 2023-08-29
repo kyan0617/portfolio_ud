@@ -18,9 +18,16 @@ export default function SkillsSection() {
         <div className={styles.wrapper}>
           <div className={`${styles["inner"]} _inner`}>
             <div className={styles.title}>
-              <h2 className={styles.titleText}>skills</h2>
+              <h2 className={`${styles.titleText} js-fadeInTitleWrapper`}>
+                <span className="js-fadeInTitle">s</span>
+                <span className="js-fadeInTitle">k</span>
+                <span className="js-fadeInTitle">i</span>
+                <span className="js-fadeInTitle">l</span>
+                <span className="js-fadeInTitle">l</span>
+                <span className="js-fadeInTitle">s</span>
+              </h2>
             </div>
-            <div className={styles.content}>
+            <div className={`${styles.content} js-fadeIn`}>
               <SkillCards skills={skillsData} activeSkillKey={activeSkillKey} />
               <SkillsList skills={skillsData} activeSkillKey={activeSkillKey} onSkillItemClick={handleSkillItemClick} />
             </div>

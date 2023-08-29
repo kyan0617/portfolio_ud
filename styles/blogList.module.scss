@@ -16,6 +16,8 @@
   border-radius: 2rem;
   overflow: hidden;
   margin-bottom: 5.6rem;
+  opacity: 0;
+  transform: translateY(6rem);
   
   @include s.mq(sm) {
     max-width: 32.8rem;
@@ -86,6 +88,8 @@
   margin-left: auto;
   margin-bottom: 3.2rem;
   padding-right: 4rem;
+  opacity: 0;
+  transform: translateY(6rem);
 
   @include s.mq(sm) {
     max-width: 100%;

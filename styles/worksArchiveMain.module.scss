@@ -1,15 +1,22 @@
 @use "settings" as s;
 
 .inner {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 10rem;
 }
 .title {
+  display: flex;
   font-size: 5.4rem;
   color: s.$text-color;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 2.8rem;
+
+  > span {
+    display: block;
+    opacity: 0;
+    transform: scale(0.9) translateX(-2rem);
+  }
   
   @include s.mq(sm) {
     font-size: 7.2rem;

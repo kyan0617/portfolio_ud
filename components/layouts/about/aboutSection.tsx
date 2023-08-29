@@ -14,25 +14,17 @@ gsap.config({
     nullTargetWarn: false,
 });
 
-export default function Top() {
+export default function About() {
   useEffect(() => {
-    const timeline = gsap.timeline();
-    timeline.to('.js-fadeInTitle', {
+    gsap.to('.js-fadeLineToLeft', {
       opacity: 1,
-      scale: 1,
-      x: 0,
+      right: 0,
       ease: Power4.easeOut,
-      stagger: { 
-        each: 0.06,
-        from: "start",
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: '.js-fadeLineToLeft',
+        start: 'top 80%',
       }
-    });
-
-    // ScrollTriggerを使用してタイムラインを制御
-    ScrollTrigger.create({
-      animation: timeline,
-      trigger: '.js-aboutTrigger',
-      start: 'top center',
     });
   }, []);
 
@@ -40,7 +32,7 @@ export default function Top() {
     <>
       <section className={styles.container}>
         <div className={`${styles.inner} js-aboutTrigger`}>
-          <div className={styles.img}>
+          <div className={`${styles.img} js-fadeIn`}>
             <Image src='/src/img/aboutImg.jpg' layout='responsive' objectFit='contain' alt='logo' width={640} height={436} />
           </div>
           <div className={styles.main}>
@@ -52,9 +44,9 @@ export default function Top() {
                 <span className="js-fadeInTitle">u</span>
                 <span className="js-fadeInTitle">t</span>
               </span>
-              <p className={styles.name}>Nishida Haruka</p>
+              <p className={`${styles.name} js-fadeIn`}>Nishida Haruka</p>
             </div>
-            <div className={styles.content}>
+            <div className={`${styles.content} js-fadeIn`}>
               <p className={styles.text}>
                 出身地 / 名古屋市<br />
                 生年月日 / 1995年1月18日<br />
@@ -66,6 +58,7 @@ export default function Top() {
               </p>
             </div>
           </div>
+          <div className={`${styles.bottomLine} js-fadeLineToLeft`}></div>
         </div>
       </section>
     </>

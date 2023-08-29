@@ -1,6 +1,19 @@
+import React, {useEffect} from 'react';
 import styles from '../../../styles/blogList.module.scss';
 import type { Blog } from '../../../types/blog';
 import Image from "next/legacy/image";
+
+// GSAP のインポート
+import {gsap, Power4} from 'gsap';
+
+// ScrollTrigger のインポート
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+// ScrollTriggerの初期化
+gsap.registerPlugin(ScrollTrigger);
+gsap.config({
+    nullTargetWarn: false,
+});
 
 type Props = {
   blog: Array<Blog>;
@@ -11,10 +24,27 @@ export default function BlogList(props: Props) {
   const sortedBlog = filteredBlog.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
   const latestBlog = sortedBlog.slice(0, 3);
 
+  // fade in animation
+  useEffect(() => {
+    const fadeInBlogItem = document.querySelectorAll('.js-fadeInBlog');
+    fadeInBlogItem.forEach(el => {
+      gsap.to(el , {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: Power4.easeOut,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+        }
+      });
+    });
+  }, []);
+
   return(
     <ul className={styles.list}>
     {latestBlog.map((article, index) => (
-        <li className={`${index === 0 ? styles.firstItem : styles.item}`} key={article.title}>
+        <li className={`${index === 0 ? styles.firstItem : styles.item} js-fadeInBlog`} key={article.title}>
           <a href={`https://next-blog.site/media/${article.id}`} className={styles.link} target="_blank" rel="noopener noreferrer">
             <div className={styles.img}>
               <Image
