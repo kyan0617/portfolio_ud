@@ -1,3 +1,4 @@
+import Head from "next/head";
 import styles from '../../styles/Home.module.scss';
 import Link from 'next/link';
 import { client } from '../../libs/client';
@@ -14,6 +15,9 @@ type Props = {
 export default function Home({ works }: Props) {
   return (
     <>
+      <Head>
+        <title>Works | Haruka Nishida Portfolio</title>
+      </Head>
       <Header />
       <MainSection works={ works } />
       <ContactSection />

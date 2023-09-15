@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import { client } from '../../libs/client';
 import type { Works } from '../../types/works';
@@ -13,6 +14,9 @@ type Props = {
 export default function WorksId({ works }: Props) {
   return (
     <>
+      <Head>
+        <title>{ works.title } | Haruka Nishida Portfolio</title>
+      </Head>
       <HeaderSection />
       <WorkDetails  works={works}/>
       <ContactSection />

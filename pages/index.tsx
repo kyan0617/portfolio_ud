@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, {useEffect} from 'react';
 import styles from '../styles/Home.module.scss';
 import Link from 'next/link';
@@ -71,6 +72,9 @@ export default function Home({ works, blog }: Props) {
 
   return (
     <>
+      <Head>
+        <title>Haruka Nishida Portfolio</title>
+      </Head>
       <TopSection />
       <AboutSection />
       <WorksSection works={ works } />
