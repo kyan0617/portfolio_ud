@@ -3,12 +3,6 @@ import styles from '../../../styles/contactForm.module.scss';
 import Link from 'next/link';
 import { useForm, SubmitHandler } from "react-hook-form";
 
-// 先ほど取得したGoogleForm関連データ
-import ContactGoogleForm from '@/pages/api/contact'
-
-// axios
-import axios from 'axios'
-
 type FormValues = {
   company: string;
   fullName: string;
@@ -21,33 +15,25 @@ export default function WorkDetails() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
   const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
 
-  const submit = (values: any) => {
-    console.log(values);
-    // ReactHookFormは、hundleSubmitに渡した関数に、
-    // registerを利用して登録した各Inputの値をObjectとして渡されてくる。
-    // values.nameやvalues.genderと呼び出せる。便利ですね！
-  
-    const GOOGLE_FORM_ACTION = ContactGoogleForm.action
-    // CORS対策は必須
-    const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
-  
-    // PostのParm生成
-    const submitParams = new FormData()
-    submitParams.append(ContactGoogleForm.company, values.company)
-    submitParams.append(ContactGoogleForm.name, values.name)
-    submitParams.append(ContactGoogleForm.email, values.email)
-    submitParams.append(ContactGoogleForm.message, values.message)
-  
-    // 実行
-    axios
-      .post(CORS_PROXY + GOOGLE_FORM_ACTION, submitParams)
-      .then(() => {
-        // window.location.href = '/thanks' // 成功時
-        console.log('送信完了!!');
-      })
-      .catch((error) => {
-        console.log(error) // 失敗時
-      })
+  const sendForm = async (event: any) => {
+    // event.preventDefault();
+console.log(event);
+    const res = await fetch('api/contact', {
+      body: JSON.stringify({
+        company: event.company,
+        name: event.name,
+        email: event.email,
+        message: event.message
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST'
+    });
+
+    if (res.ok) {
+      console.log('送信完了！');
+    };
   }
 
   return (
@@ -77,7 +63,7 @@ export default function WorkDetails() {
 
             <form
               className={styles.form}
-              onSubmit={handleSubmit(submit)}
+              onSubmit={handleSubmit(sendForm)}
             >
               <div className={styles.unit}>
                 <label htmlFor="company" className={styles.label}>会社名 / 屋号</label>
