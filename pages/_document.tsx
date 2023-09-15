@@ -14,7 +14,7 @@ export default function Document() {
         <meta property="og:title" content="Haruka Nishida Portfolio" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="愛知県名古屋市を拠点にフリーランスで活動している西田遥香と申します。Liquidを使用したShopify構築やWordPressのオリジナルテーマ制作などをメインにWEBコーダーのお仕事をしております。" />
-        <meta property="og:image" content="/src/img/ogp.jpg" />
+        <meta property="og:image" content="https://www.ilohalink.com/src/img/ogp.jpg" />
       </Head>
       <body>
         <Main />
