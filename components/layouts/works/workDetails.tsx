@@ -1,18 +1,31 @@
+import React, {useEffect} from 'react';
 import type { Works } from '../../../types/works' 
 import styles from '../../../styles/workDetails.module.scss';
 import Image from "next/legacy/image";
 import Link from 'next/link';
+
+// GSAP のインポート
+import {gsap, Power4} from 'gsap';
 
 type Props = {
   works: Works;
 }
 
 export default function WorkDetails({ works }: Props) {
+  useEffect(() => {
+    gsap.to('.js-fadeInWorksDetail', {
+      opacity: 1,
+      y: 0,
+      ease: Power4.easeOut,
+      duration: 1,
+    });
+  }, []);
+
   return (
     <>
       <section className={styles.container}>
         <div className={`${styles["inner"]} _inner`}>
-          <h2 className={styles.heading}>
+          <h2 className={`${styles.heading} js-fadeInWorksDetail`}>
             {works.title}
           </h2>
           <div className={styles.box}>

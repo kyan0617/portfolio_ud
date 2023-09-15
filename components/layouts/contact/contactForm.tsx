@@ -1,7 +1,11 @@
+import React, {useEffect} from 'react';
 import { useState } from 'react';
 import styles from '../../../styles/contactForm.module.scss';
 import Link from 'next/link';
 import { useForm, SubmitHandler } from "react-hook-form";
+
+// GSAP のインポート
+import {gsap, Back} from 'gsap';
 
 type FormValues = {
   company: string;
@@ -36,14 +40,36 @@ console.log(event);
     };
   }
 
+  useEffect(() => {
+    // FADE IN TITLE
+    gsap.to('.js-fadeInTitle', {
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      ease: Back.easeOut.config(1.7),
+      stagger: { 
+        amount: 0.5,
+        from: "start",
+      }
+    });
+  }, []);
+
   return (
     <>
       <section className={styles.container}>
         <div className={`${styles["inner"]} _inner`}>
-          <h2 className={styles.heading}>
-            contact
-            <span className={styles.headingJp}>お問い合わせ・ご相談</span>
-          </h2>
+          <div className={styles.heading}>
+            <span className={styles.headingEn}>
+              <span className="js-fadeInTitle">c</span>
+              <span className="js-fadeInTitle">o</span>
+              <span className="js-fadeInTitle">n</span>
+              <span className="js-fadeInTitle">t</span>
+              <span className="js-fadeInTitle">a</span>
+              <span className="js-fadeInTitle">c</span>
+              <span className="js-fadeInTitle">t</span>
+            </span>
+            <h2 className={styles.headingJp}>お問い合わせ・ご相談</h2>
+          </div>
           <div className={styles.box}>
             <p className={styles.text}>
               ご相談やお見積もりなどお気軽にご連絡くださいませ。

@@ -1,20 +1,44 @@
+import React, {useEffect} from 'react';
 import styles from '../../../styles/worksArchiveMain.module.scss';
 import type { Works } from '../../../types/works';
 import Image from "next/legacy/image";
 import Link from 'next/link';
+
+// GSAP のインポート
+import {gsap, Back} from 'gsap';
 
 type Props = {
   works: Array<Works>;
 }
 
 export default function WorksArchiveMain(props: Props) {
+  useEffect(() => {
+    // FADE IN TITLE
+    gsap.to('.js-fadeInTitle', {
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      ease: Back.easeOut.config(1.7),
+      stagger: { 
+        amount: 0.5,
+        from: "start",
+      }
+    });
+  }, []);
+
   return (
     <>
       <section className="section">
         <div className={styles.wrapper}>
           <div className={`${styles["inner"]} _inner`}>
             <div className={styles.top}>
-              <h2 className={styles.title}>works</h2>
+              <h2 className={styles.title}>
+                <span className="js-fadeInTitle">w</span>
+                <span className="js-fadeInTitle">o</span>
+                <span className="js-fadeInTitle">r</span>
+                <span className="js-fadeInTitle">k</span>
+                <span className="js-fadeInTitle">s</span>
+              </h2>
             </div>
             <ul className={styles.list}>
               {props.works.map((work) => (

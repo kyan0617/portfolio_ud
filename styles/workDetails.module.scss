@@ -12,6 +12,8 @@
   color: s.$accent-color;
   font-weight: 700;
   margin-bottom: 2.4rem;
+  opacity: 0;
+  transform: translateY(2rem);
 
   @include s.mq(sm) {
     font-size: 2.4rem;

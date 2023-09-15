@@ -34,17 +34,17 @@ export default function Top() {
       ease: Power4.easeOut,
       duration: 3,
     },"<");
-    timeline.to('.js-fadeInBoxToRight', {
+    timeline.to('.js-fadeInTopMain', {
       opacity: 1,
-      x: 0,
+      y: 0,
       ease: Power4.easeOut,
-      duration: 3,
+      duration: 2,
     }, '<2');
-    timeline.to('.js-fadeInTextToRight', {
+    timeline.to('.js-fadeInTopTitle', {
       opacity: 1,
-      x: 0,
+      y: 0,
       ease: Power4.easeOut,
-      duration: 3,
+      duration: 2,
     }, '<');
   }, []);
 
@@ -54,13 +54,13 @@ export default function Top() {
         <div className={styles.inner}>
           <span className={`${styles["dashedColumnLine"]} js-columnLineToBottom`}></span>
           <span className={`${styles["dashedRowLine"]} js-RowLine`}></span>
-          <div className={`${styles.title} js-fadeInTextToRight`}>
+          <div className={`${styles.title} js-fadeInTopTitle`}>
             <span className={styles.large}>thanks for visiting</span>
             <span className={styles.small}>my portfolio</span>
           </div>
           <div className={styles.card}>
             <span className={`${styles["cardDashedLine"]} js-columnLineToTop`}></span>
-            <div className={`${styles.cardInner} js-fadeInBoxToRight`}>
+            <div className={`${styles.cardInner} js-fadeInTopMain`}>
               <div className={styles.left}>
                 <div className={styles.img}>
                   <Image src='/src/img/logo.svg' layout='responsive' objectFit='contain' alt='logo' width={283} height={127} />

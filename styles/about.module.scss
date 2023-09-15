@@ -5,6 +5,10 @@
   width: 100%;
   margin-inline: auto;
   padding-block: 6.4rem 8rem;
+  overflow: hidden;
+}
+.bottomLine {
+  display: none;
 }
 .img {
   max-width: 95%;
@@ -12,6 +16,8 @@
   margin-left: auto;
   overflow: hidden;
   margin-bottom: 9.3rem;
+  opacity: 0;
+  transform: translateY(6rem);
   
   img {
     border-radius: 2rem 0 0 2rem;
@@ -39,7 +45,7 @@
   > span {
     display: block;
     opacity: 0;
-    transform: matrix(0, 0, 0, 0, 0, 0);
+    transform: scale(0.9) translateX(-2rem);
   }
 }
 .name {
@@ -48,6 +54,12 @@
   color: s.$text-color;
   letter-spacing: 0.1em;
   z-index: 100;
+  opacity: 0;
+  transform: translateY(6rem);
+}
+.content {
+  opacity: 0;
+  transform: translateY(6rem);
 }
 .text {
   font-size: 1.6rem;
@@ -61,18 +73,17 @@
     display: flex;
     flex-direction: row-reverse;
     padding: 31.2rem 0 8.8rem 2.6%;
-
-    &::after {
-      content: '';
-      position: absolute;
-      display: block;
-      max-width: 47%;
-      width: 100%;
-      height: 0.1rem;
-      background-color: s.$main-color;
-      right: 0;
-      bottom: 0;
-    }
+  }
+  .bottomLine {
+    position: absolute;
+    display: block;
+    max-width: 47%;
+    width: 100%;
+    height: 0.1rem;
+    background-color: s.$main-color;
+    right: -100%;
+    bottom: 0;
+    opacity: 0;
   }
   .img {
     max-width: 50%;

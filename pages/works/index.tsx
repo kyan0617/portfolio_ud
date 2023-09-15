@@ -4,6 +4,7 @@ import { client } from '../../libs/client';
 import type { Works } from '../../types/works';
 import Header from '../../components/layouts/header/headerSection'
 import MainSection from '../../components/layouts/works/worksArchiveMain'
+import ContactSection from '../../components/layouts/contact/contactSection'
 import FooterSection from '../../components/layouts/footer/footerSection'
 
 type Props = {
@@ -15,6 +16,7 @@ export default function Home({ works }: Props) {
     <>
       <Header />
       <MainSection works={ works } />
+      <ContactSection />
       <FooterSection />
     </>
   )
