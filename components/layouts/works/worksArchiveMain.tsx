@@ -69,7 +69,7 @@ export default function WorksArchiveMain(props: Props) {
             </ul>
             <div className={styles.GoTopButton}>
               <Link href='/' className={styles.GoTopLink}>
-                Back To Top
+                Back To Home
               </Link>
             </div>
           </div>

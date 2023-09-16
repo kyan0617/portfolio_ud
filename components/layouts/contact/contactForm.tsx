@@ -118,7 +118,7 @@ console.log(event);
           <div className={styles.topButton}>
             <Link href='/' className={styles.topLink}>
               <span className={styles.arrow}></span>
-              Back To Top
+              Back To Home
             </Link>
           </div>
         </div>
